@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script>
+(function(){var b="",h=location.hostname;if(/\.github\.io$/i.test(h)){var s=location.pathname.split("/").filter(Boolean)[0];if(s&&!/\.html$/i.test(s))b="/"+s+"/";}window.SHARDA_BASE=b;if(b){var e=document.createElement("base");e.href=b;document.head.appendChild(e);}})();
+  </script>
+  <title>My Learning Roadmap — Sharda Setu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="ui-enhancements.css" />
+  <link rel="stylesheet" href="learning-roadmap.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+
+  <meta name="theme-color" content="#1a237e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Sharda Setu" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.svg" />
+  <link rel="stylesheet" href="pwa.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-link">
+        <img src="assets/logo.svg" alt="Sharda Setu" class="logo-img" width="44" height="44"/>
+        <div class="brand-text">
+          <div class="brand-name">Sharda Setu</div>
+          <div class="brand-tagline">Accessible Learning</div>
+        </div>
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="online-education.html">Online Education</a>
+        <a href="study-assistant.html">Study Assistant</a>
+        <a href="learning-roadmap.html" class="nav-edu">My Roadmap</a>
+        <a href="learn-game.html">Quiz</a>
+      </nav>
+      <div class="auth" id="auth-slot"></div>
+    </div>
+  </header>
+
+  <main class="lr-page">
+    <section class="lr-hero lr-container">
+      <h1>AI <span>Personalized Roadmap</span></h1>
+      <p>Pick your exam and date — get a day-wise plan, weekly targets, progress tracking, and automatic catch-up when you miss tasks.</p>
+    </section>
+
+    <div class="lr-container">
+      <div class="lr-toolbar-top">
+        <button type="button" class="lr-btn-ghost" id="lr-theme-btn" title="Toggle dark mode">🌙</button>
+      </div>
+
+      <div id="lr-guest" class="lr-guest" hidden>
+        <h2>Sign in to create your roadmap</h2>
+        <p>Your personalized study plan is saved to your account and adjusts when you miss tasks.</p>
+        <p style="margin-top:20px">
+          <a class="btn btn-cta" href="login.html">Sign In</a>
+          <a class="btn btn-outline" href="signup.html" style="margin-left:8px">Create Account</a>
+        </p>
+      </div>
+
+      <section id="lr-setup" class="lr-setup" hidden>
+        <h2>Create your study plan</h2>
+        <form id="lr-form" class="lr-form-grid">
+          <div class="lr-field">
+            <label for="lr-exam">Target exam</label>
+            <select id="lr-exam" required>
+              <option value="">Select exam…</option>
+            </select>
+          </div>
+          <div class="lr-field">
+            <label for="lr-date">Exam date</label>
+            <input type="date" id="lr-date" required />
+          </div>
+          <div class="lr-field">
+            <label for="lr-hours">Study hours / day</label>
+            <input type="number" id="lr-hours" min="2" max="12" value="5" />
+          </div>
+          <div class="lr-field">
+            <button type="submit" class="lr-btn-primary" id="lr-generate-btn">Generate roadmap</button>
+          </div>
+        </form>
+        <p class="lr-error" id="lr-form-error" hidden></p>
+      </section>
+
+      <div id="lr-dashboard" class="lr-dashboard">
+        <div class="lr-stats" id="lr-stats"></div>
+
+        <div class="lr-progress-wrap">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+            <strong id="lr-exam-title">—</strong>
+            <span class="lr-week-meta" id="lr-exam-meta">—</span>
+          </div>
+          <div class="lr-progress-bar">
+            <div class="lr-progress-fill" id="lr-progress-fill" style="width:0%"></div>
+          </div>
+          <p style="margin:0;font-size:0.88rem;color:var(--lr-muted)" id="lr-progress-label">0% complete</p>
+        </div>
+
+        <div id="lr-adjust-banner" class="lr-adjust-banner" hidden></div>
+        <div id="lr-ai-tips" class="lr-ai-tips" hidden></div>
+
+        <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+          <button type="button" class="lr-btn-ghost" id="lr-regenerate-btn">Regenerate plan</button>
+          <button type="button" class="lr-btn-ghost" id="lr-edit-setup-btn">Change exam / date</button>
+        </div>
+
+        <div class="lr-tabs" role="tablist">
+          <button type="button" class="lr-tab active" data-panel="weeks">Weekly targets</button>
+          <button type="button" class="lr-tab" data-panel="days">Day-wise plan</button>
+        </div>
+
+        <div id="lr-panel-weeks" class="lr-panel active">
+          <div class="lr-weeks" id="lr-weeks"></div>
+        </div>
+        <div id="lr-panel-days" class="lr-panel">
+          <div class="lr-days" id="lr-days"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <hr />
+      <p>© 2024 Sharda Setu. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="learning-roadmap.js"></script>
+  <script src="pwa.js" defer></script>
+</body>
+</html>

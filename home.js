@@ -1,3 +1,11 @@
+function showRoleCardsIfNeeded() {
+  const user = window.ShardaAuth?.getUser?.();
+  const adminCard = document.getElementById("home-admin-card");
+  const teacherCard = document.getElementById("home-teacher-card");
+  if (adminCard && user?.role === "admin") adminCard.hidden = false;
+  if (teacherCard && (user?.role === "teacher" || user?.role === "admin")) teacherCard.hidden = false;
+}
+
 async function loadHomeContent() {
   try {
     const res = await fetch("/api/banners");
@@ -79,4 +87,7 @@ function escapeAttr(s) {
   return escapeHtml(s).replace(/"/g, "&quot;");
 }
 
-document.addEventListener("DOMContentLoaded", loadHomeContent);
+document.addEventListener("DOMContentLoaded", () => {
+  showRoleCardsIfNeeded();
+  loadHomeContent();
+});

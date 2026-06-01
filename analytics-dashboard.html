@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script>
+(function(){var b="",h=location.hostname;if(/\.github\.io$/i.test(h)){var s=location.pathname.split("/").filter(Boolean)[0];if(s&&!/\.html$/i.test(s))b="/"+s+"/";}window.SHARDA_BASE=b;if(b){var e=document.createElement("base");e.href=b;document.head.appendChild(e);}})();
+  </script>
+  <title>Advanced Analytics — Sharda Setu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="ui-enhancements.css" />
+  <link rel="stylesheet" href="analytics-dashboard.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+
+  <meta name="theme-color" content="#1a237e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Sharda Setu" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.svg" />
+  <link rel="stylesheet" href="pwa.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-link">
+        <img src="assets/logo.svg" alt="" class="logo-img" width="44" height="44"/>
+        <div class="brand-text">
+          <div class="brand-name">Sharda Setu</div>
+          <div class="brand-tagline">Advanced Analytics</div>
+        </div>
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="performance-analytics.html">Performance</a>
+        <a href="analytics-dashboard.html" class="nav-edu">Analytics+</a>
+        <a href="student-dashboard.html">Dashboard</a>
+      </nav>
+      <div class="auth" id="auth-slot"></div>
+    </div>
+  </header>
+
+  <main class="ad-page">
+    <div id="analytics-root"></div>
+    <div id="analytics-fallback" class="ad-fallback" hidden>
+      <h2>Analytics bundle not built</h2>
+      <p>Run <code>npm install</code> then <code>npm run build:analytics</code> to generate Recharts bundle.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <hr />
+      <p>© 2024 Sharda Setu. Advanced Analytics powered by Recharts</p>
+    </div>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="analytics-dashboard.bundle.js" onerror="document.getElementById('analytics-fallback').hidden=false"></script>
+  <script src="pwa.js" defer></script>
+</body>
+</html>

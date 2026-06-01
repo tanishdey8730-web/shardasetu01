@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+(function(){var b="",h=location.hostname;if(/\.github\.io$/i.test(h)){var s=location.pathname.split("/").filter(Boolean)[0];if(s&&!/\.html$/i.test(s))b="/"+s+"/";}window.SHARDA_BASE=b;if(b){var e=document.createElement("base");e.href=b;document.head.appendChild(e);}})();
+  </script>
+  <title>Teacher Dashboard — Sharda Setu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="teacher-dashboard.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+
+  <meta name="theme-color" content="#1a237e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Sharda Setu" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.svg" />
+  <link rel="stylesheet" href="pwa.css" />
+</head>
+<body>
+  <div id="td-guest" class="td-guest" hidden>
+    <h1>Teacher access required</h1>
+    <p id="td-guest-msg">Sign in with a teacher or admin account.</p>
+    <p style="margin-top:20px"><a href="login.html?next=teacher-dashboard.html" class="btn btn-cta">Sign In</a></p>
+  </div>
+
+  <div id="td-app" class="td-layout" hidden>
+    <div class="td-overlay" id="td-overlay"></div>
+    <aside class="td-sidebar" id="td-sidebar">
+      <div class="td-sidebar-head">
+        <strong>Sharda Setu</strong><br />
+        <span style="font-size:0.8rem;opacity:0.85">Teacher Portal</span>
+      </div>
+      <nav class="td-nav" id="td-nav">
+        <button type="button" data-section="dashboard" class="active">📊 Dashboard</button>
+        <button type="button" data-section="lessons">📤 Upload lessons</button>
+        <button type="button" data-section="notes">📒 Upload notes</button>
+        <button type="button" data-section="quizzes">❓ Create quizzes</button>
+        <button type="button" data-section="assignments">📋 Assignments</button>
+        <button type="button" data-section="performance">👥 Student performance</button>
+        <button type="button" data-section="discussions">💬 Discussions</button>
+        <button type="button" data-section="analytics">📈 Course analytics</button>
+      </nav>
+      <div style="padding:16px;border-top:1px solid rgba(255,255,255,0.1)">
+        <a href="index.html" style="color:#99f6e4;font-size:0.85rem">← Back to site</a>
+      </div>
+    </aside>
+
+    <div class="td-main">
+      <header class="td-topbar">
+        <button type="button" class="td-menu-btn" id="td-menu-btn">☰</button>
+        <h1 id="td-page-title">Dashboard</h1>
+        <button type="button" class="td-btn td-btn-ghost" id="td-refresh">Refresh</button>
+      </header>
+
+      <div class="td-content">
+        <section class="td-section active" data-section="dashboard" id="sec-dashboard">
+          <div class="td-stats" id="td-dash-stats"></div>
+          <div class="td-card">
+            <h2>Quick actions</h2>
+            <div style="display:flex;flex-wrap:wrap;gap:10px">
+              <button type="button" class="td-btn td-btn-primary" data-goto="lessons">Upload lesson</button>
+              <button type="button" class="td-btn td-btn-primary" data-goto="notes">Upload notes</button>
+              <button type="button" class="td-btn td-btn-primary" data-goto="quizzes">Create quiz</button>
+              <button type="button" class="td-btn td-btn-ghost" data-goto="assignments">New assignment</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="td-section" data-section="lessons" hidden>
+          <div class="td-card">
+            <h2>Upload lesson</h2>
+            <form id="lesson-form" enctype="multipart/form-data">
+              <div class="td-form-grid">
+                <div class="full"><label>Title *</label><input name="title" required /></div>
+                <div class="full"><label>Description</label><textarea name="description" rows="2"></textarea></div>
+                <div><label>Exam ID</label><input name="examId" placeholder="ssc-cgl" /></div>
+                <div><label>YouTube video ID</label><input name="videoId" placeholder="dQw4w9WgXcQ" /></div>
+                <div class="full"><label>YouTube URL</label><input name="youtubeUrl" type="url" /></div>
+                <div class="full"><label>Attachment (optional)</label><input type="file" name="file" /></div>
+                <div class="full"><label><input type="checkbox" name="submitForApproval" value="1" /> Submit for admin approval</label></div>
+              </div>
+              <button type="submit" class="td-btn td-btn-primary" style="margin-top:14px">Upload lesson</button>
+            </form>
+          </div>
+          <div class="td-card">
+            <h2>Your lessons</h2>
+            <div class="td-table-wrap"><table class="td-table" id="lessons-table"><tbody></tbody></table></div>
+          </div>
+        </section>
+
+        <section class="td-section" data-section="notes" hidden>
+          <div class="td-card">
+            <h2>Upload notes</h2>
+            <form id="notes-form" enctype="multipart/form-data">
+              <div class="td-form-grid">
+                <div class="full"><label>Title *</label><input name="title" required /></div>
+                <div><label>Exam ID</label><input name="examId" /></div>
+                <div class="full"><label>Content (text)</label><textarea name="content" rows="4"></textarea></div>
+                <div class="full"><label>PDF / document</label><input type="file" name="file" accept=".pdf,.txt,.md" /></div>
+                <div class="full"><label><input type="checkbox" name="submitForApproval" value="1" /> Submit for admin approval</label></div>
+              </div>
+              <button type="submit" class="td-btn td-btn-primary" style="margin-top:14px">Upload notes</button>
+            </form>
+          </div>
+          <div class="td-card">
+            <h2>Your notes</h2>
+            <div class="td-table-wrap"><table class="td-table" id="notes-table"><tbody></tbody></table></div>
+          </div>
+        </section>
+
+        <section class="td-section" data-section="quizzes" hidden>
+          <div class="td-card">
+            <h2>Create quiz</h2>
+            <form id="quiz-form">
+              <div class="td-form-grid">
+                <div class="full"><label>Quiz title *</label><input id="quiz-title" required /></div>
+                <div><label>Exam ID</label><input id="quiz-exam" value="ssc-cgl" /></div>
+                <div><label>Chapter ID</label><input id="quiz-chapter" value="quant-arithmetic" /></div>
+                <div><label>Duration (min)</label><input id="quiz-duration" type="number" value="15" /></div>
+              </div>
+              <div id="quiz-questions" style="margin-top:16px"></div>
+              <button type="button" class="td-btn td-btn-ghost" id="quiz-add-q">+ Add question</button>
+              <button type="submit" class="td-btn td-btn-primary" style="margin-top:14px">Save quiz</button>
+            </form>
+          </div>
+          <div class="td-card">
+            <h2>Your quizzes</h2>
+            <div class="td-table-wrap"><table class="td-table" id="quizzes-table"><tbody></tbody></table></div>
+          </div>
+        </section>
+
+        <section class="td-section" data-section="assignments" hidden>
+          <div class="td-card">
+            <h2>Create assignment</h2>
+            <form id="assignment-form">
+              <div class="td-form-grid">
+                <div class="full"><label>Title *</label><input id="asg-title" required /></div>
+                <div class="full"><label>Description</label><textarea id="asg-desc" rows="2"></textarea></div>
+                <div><label>Exam ID</label><input id="asg-exam" /></div>
+                <div><label>Due date</label><input id="asg-due" type="date" /></div>
+                <div><label>Max score</label><input id="asg-max" type="number" value="100" /></div>
+              </div>
+              <button type="submit" class="td-btn td-btn-primary" style="margin-top:14px">Create assignment</button>
+            </form>
+          </div>
+          <div class="td-card">
+            <h2>Assignments &amp; grading</h2>
+            <div class="td-table-wrap"><table class="td-table" id="assignments-table"><tbody></tbody></table></div>
+            <div id="submissions-panel" hidden style="margin-top:20px">
+              <h3 id="submissions-title"></h3>
+              <div class="td-table-wrap"><table class="td-table" id="submissions-table"><tbody></tbody></table></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="td-section" data-section="performance" hidden>
+          <div class="td-card">
+            <h2>Student performance tracking</h2>
+            <p style="color:var(--td-muted);font-size:0.9rem;margin:0 0 14px">Overview of mock tests, quizzes, and assignment scores.</p>
+            <div class="td-table-wrap"><table class="td-table" id="performance-table"><thead><tr><th>Student</th><th>Mocks</th><th>Avg mock %</th><th>Quizzes</th><th>Assignments</th><th>Avg score</th></tr></thead><tbody></tbody></table></div>
+          </div>
+        </section>
+
+        <section class="td-section" data-section="discussions" hidden>
+          <div class="td-card">
+            <h2>Discussion moderation</h2>
+            <div class="td-toolbar">
+              <input type="search" id="disc-q" placeholder="Search…" />
+              <label><input type="checkbox" id="disc-flagged" /> Flagged only</label>
+              <button type="button" class="td-btn td-btn-primary" id="disc-search">Filter</button>
+              <button type="button" class="td-btn td-btn-ghost" id="disc-new">New thread</button>
+            </div>
+            <div id="discussions-list"></div>
+          </div>
+        </section>
+
+        <section class="td-section" data-section="analytics" hidden>
+          <div class="td-stats" id="td-analytics-stats"></div>
+          <div class="td-card">
+            <h2>Content by exam</h2>
+            <div id="td-analytics-exams"></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="teacher-dashboard.js"></script>
+  <script src="pwa.js" defer></script>
+</body>
+</html>

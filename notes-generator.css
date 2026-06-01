@@ -1,0 +1,309 @@
+/* AI Notes Generator */
+:root {
+  --ng-bg: #f8fafc;
+  --ng-surface: #ffffff;
+  --ng-border: #e2e8f0;
+  --ng-text: #0f172a;
+  --ng-muted: #64748b;
+  --ng-primary: #4f46e5;
+  --ng-primary-dark: #3730a3;
+  --ng-accent: #0ea5e9;
+  --ng-radius: 12px;
+}
+
+[data-theme="dark"] {
+  --ng-bg: #0f172a;
+  --ng-surface: #1e293b;
+  --ng-border: #334155;
+  --ng-text: #f1f5f9;
+  --ng-muted: #94a3b8;
+}
+
+.ng-page {
+  min-height: calc(100vh - 72px);
+  background: var(--ng-bg);
+  color: var(--ng-text);
+}
+
+.ng-hero {
+  background: linear-gradient(120deg, #312e81, #4f46e5 45%, #0ea5e9);
+  color: #fff;
+  padding: 36px 20px;
+  text-align: center;
+}
+
+.ng-hero h1 {
+  margin: 0 0 10px;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-weight: 800;
+}
+
+.ng-hero p {
+  margin: 0 auto;
+  max-width: 580px;
+  opacity: 0.92;
+  font-size: 0.95rem;
+}
+
+.ng-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 20px 48px;
+}
+
+.ng-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.ng-panel {
+  background: var(--ng-surface);
+  border: 1px solid var(--ng-border);
+  border-radius: var(--ng-radius);
+  padding: 22px;
+}
+
+.ng-panel h2 {
+  margin: 0 0 16px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.ng-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.ng-tab {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid var(--ng-border);
+  background: var(--ng-bg);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: var(--ng-text);
+}
+
+.ng-tab.active {
+  background: var(--ng-primary);
+  border-color: var(--ng-primary);
+  color: #fff;
+}
+
+.ng-field {
+  margin-bottom: 14px;
+}
+
+.ng-field label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ng-muted);
+  margin-bottom: 6px;
+}
+
+.ng-field input,
+.ng-field select,
+.ng-field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--ng-border);
+  border-radius: 8px;
+  background: var(--ng-bg);
+  color: var(--ng-text);
+  font-size: 0.92rem;
+}
+
+.ng-upload-zone {
+  border: 2px dashed var(--ng-border);
+  border-radius: 10px;
+  padding: 28px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.ng-upload-zone:hover,
+.ng-upload-zone.dragover {
+  border-color: var(--ng-primary);
+}
+
+.ng-upload-zone input {
+  display: none;
+}
+
+.ng-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--ng-primary), var(--ng-accent));
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.ng-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.ng-btn-outline {
+  background: transparent;
+  border: 2px solid var(--ng-primary);
+  color: var(--ng-primary);
+  width: auto;
+  padding: 8px 16px;
+  margin-top: 0;
+}
+
+.ng-output {
+  min-height: 400px;
+}
+
+.ng-output-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--ng-muted);
+}
+
+.ng-output-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--ng-border);
+}
+
+.ng-output-head h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.ng-export-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ng-section {
+  margin-bottom: 22px;
+}
+
+.ng-section h3 {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ng-primary);
+}
+
+.ng-concept-card {
+  padding: 12px 14px;
+  background: var(--ng-bg);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  border-left: 3px solid var(--ng-primary);
+}
+
+.ng-concept-card strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.ng-formula {
+  font-family: ui-monospace, monospace;
+  background: var(--ng-bg);
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 0.88rem;
+}
+
+.ng-markdown {
+  line-height: 1.6;
+  font-size: 0.92rem;
+}
+
+.ng-markdown h2 {
+  font-size: 1.1rem;
+  margin: 1.2em 0 0.5em;
+}
+
+.ng-markdown ul {
+  padding-left: 1.2em;
+}
+
+.ng-loading {
+  text-align: center;
+  padding: 48px;
+}
+
+.ng-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--ng-border);
+  border-top-color: var(--ng-primary);
+  border-radius: 50%;
+  animation: ng-spin 0.8s linear infinite;
+  margin: 0 auto 16px;
+}
+
+@keyframes ng-spin {
+  to { transform: rotate(360deg); }
+}
+
+.ng-history {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--ng-border);
+}
+
+.ng-history-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  color: var(--ng-text);
+  margin-bottom: 4px;
+}
+
+.ng-history-item:hover {
+  background: var(--ng-bg);
+}
+
+.ng-guest {
+  text-align: center;
+  padding: 48px;
+  background: var(--ng-surface);
+  border-radius: var(--ng-radius);
+  border: 1px solid var(--ng-border);
+}
+
+.ng-status {
+  font-size: 0.8rem;
+  color: var(--ng-warn, #d97706);
+  margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+  .ng-layout {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "sessions": [
+    {
+      "id": "7d26904420b0677c95a07aeb",
+      "userId": "u2",
+      "examId": "ssc-cgl",
+      "type": "chapter",
+      "chapterId": "quant-percentage",
+      "pyqYear": null,
+      "templateId": null,
+      "title": "Percentage & Ratio — Chapter Test",
+      "durationMinutes": 30,
+      "marksPerQuestion": 2,
+      "negativeMarks": 0.5,
+      "questionIds": [
+        "py1-ssc-cgl",
+        "a9-ssc",
+        "qb-242",
+        "m2-ssc-cgl",
+        "d7-ssc",
+        "py9-ssc-cgl",
+        "m6-ssc",
+        "fs1-ssc-cgl",
+        "d5-ssc",
+        "a1-ssc",
+        "t8-ssc",
+        "t5-ssc",
+        "hr7-ssc",
+        "fs1-ssc",
+        "m10-ssc-cgl"
+      ],
+      "startedAt": "2026-06-01T07:43:51.219Z",
+      "endsAt": "2026-06-01T08:13:51.219Z",
+      "submitted": false,
+      "createdAt": "2026-06-01T07:43:51.219Z"
+    }
+  ]
+}

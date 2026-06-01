@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Sharda Setu">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2b6ef4"/>
+      <stop offset="100%" stop-color="#22a36a"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="108" fill="url(#g)"/>
+  <path d="M102 334 Q256 222 410 334" stroke="#fff" stroke-width="20" fill="none" stroke-linecap="round"/>
+  <rect x="186" y="138" width="140" height="112" rx="16" fill="#fff" opacity="0.95"/>
+  <line x1="214" y1="174" x2="298" y2="174" stroke="#2b6ef4" stroke-width="10" stroke-linecap="round"/>
+  <line x1="214" y1="204" x2="282" y2="204" stroke="#22a36a" stroke-width="10" stroke-linecap="round"/>
+  <line x1="214" y1="234" x2="266" y2="234" stroke="#7a8896" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="256" cy="334" r="16" fill="#ffd84a"/>
+</svg>

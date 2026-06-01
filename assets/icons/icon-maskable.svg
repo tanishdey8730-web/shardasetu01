@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Sharda Setu">
+  <rect width="512" height="512" fill="#1a237e"/>
+  <circle cx="256" cy="256" r="180" fill="url(#g)"/>
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2b6ef4"/>
+      <stop offset="100%" stop-color="#22a36a"/>
+    </linearGradient>
+  </defs>
+  <text x="256" y="280" text-anchor="middle" font-family="system-ui,sans-serif" font-size="120" font-weight="800" fill="#fff">SS</text>
+</svg>

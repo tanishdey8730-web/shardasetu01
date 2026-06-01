@@ -11,6 +11,15 @@
   <link rel="stylesheet" href="ui-enhancements.css">
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#1a237e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Sharda Setu" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.svg" />
+  <link rel="stylesheet" href="pwa.css" />
 </head>
 <body>
   <div class="auth-layout">
@@ -45,11 +54,15 @@
         </div>
 
         <div class="options">
-          <label><input type="checkbox"> Remember me</label>
-          <a href="#" class="forgot">Forgot password?</a>
+          <label><input type="checkbox" id="remember-me"> Remember me</label>
+          <a href="forgot-password.html" class="forgot">Forgot password?</a>
         </div>
 
         <button type="submit" class="btn">Sign In</button>
+
+        <div class="auth-divider"><span>or</span></div>
+        <button type="button" class="btn btn-google" id="google-login">Continue with Google</button>
+
         <p class="signup">Don't have an account? <a href="signup.html">Sign up here</a></p>
         <a href="index.html" class="back">&larr; Back to Home</a>
       </form>
@@ -57,6 +70,14 @@
   </div>
   <script src="auth.js"></script>
   <script>
+    document.getElementById("google-login").addEventListener("click", () => ShardaAuth.loginWithGoogle());
+
+    const resetMsg = new URLSearchParams(window.location.search).get("reset");
+    if (resetMsg) {
+      document.getElementById("login-error").style.color = "#059669";
+      document.getElementById("login-error").textContent = "Password updated. Please sign in.";
+    }
+
     document.getElementById("login-form").addEventListener("submit", async (e) => {
       e.preventDefault();
       const err = document.getElementById("login-error");
@@ -73,5 +94,6 @@
       }
     });
   </script>
+  <script src="pwa.js" defer></script>
 </body>
 </html>

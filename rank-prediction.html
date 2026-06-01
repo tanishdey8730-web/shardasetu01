@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script>
+(function(){var b="",h=location.hostname;if(/\.github\.io$/i.test(h)){var s=location.pathname.split("/").filter(Boolean)[0];if(s&&!/\.html$/i.test(s))b="/"+s+"/";}window.SHARDA_BASE=b;if(b){var e=document.createElement("base");e.href=b;document.head.appendChild(e);}})();
+  </script>
+  <title>AI Rank Prediction — Sharda Setu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="ui-enhancements.css" />
+  <link rel="stylesheet" href="rank-prediction.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <meta name="theme-color" content="#1a237e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Sharda Setu" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.svg" />
+  <link rel="stylesheet" href="pwa.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-link">
+        <img src="assets/logo.svg" alt="" class="logo-img" width="44" height="44"/>
+        <div class="brand-text">
+          <div class="brand-name">Sharda Setu</div>
+          <div class="brand-tagline">Rank Prediction</div>
+        </div>
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="mock-tests.html">Mock Tests</a>
+        <a href="rank-prediction.html" class="nav-edu">Rank AI</a>
+        <a href="exam-readiness.html">Readiness</a>
+        <a href="performance-analytics.html">Analytics</a>
+      </nav>
+      <div class="auth" id="auth-slot"></div>
+    </div>
+  </header>
+
+  <main class="rp-page">
+    <section class="rp-hero">
+      <h1>AI Rank Prediction</h1>
+      <p>Mock performance analysis, predicted rank, selection probability, future trends &amp; improvement plan.</p>
+    </section>
+
+    <div class="rp-container">
+      <div class="rp-toolbar">
+        <label>
+          Target exam
+          <select id="rp-exam-filter" aria-label="Select exam">
+            <option value="ssc-cgl">SSC CGL</option>
+            <option value="ssc">SSC</option>
+            <option value="nda">NDA</option>
+            <option value="cds">CDS</option>
+            <option value="afcat">AFCAT</option>
+            <option value="rrb-ntpc">RRB NTPC</option>
+          </select>
+        </label>
+        <button type="button" class="btn btn-outline" id="rp-refresh">Refresh prediction</button>
+      </div>
+
+      <p class="rp-disclaimer" id="rp-disclaimer" hidden></p>
+
+      <div id="rp-guest" class="rp-guest" hidden>
+        <h2>Sign in for rank prediction</h2>
+        <p>Complete mock tests to unlock AI rank estimates and selection probability.</p>
+        <a href="login.html?next=rank-prediction.html" class="btn btn-cta">Sign In</a>
+      </div>
+
+      <div id="rp-loading" class="rp-empty">Analyzing mock performance…</div>
+
+      <div id="rp-dashboard" hidden>
+        <div class="rp-kpi-row" id="rp-kpis"></div>
+
+        <div class="rp-top-grid">
+          <div class="rp-card rp-rank-card">
+            <h3>Predicted rank</h3>
+            <div class="rp-rank-main" id="rp-rank-main">—</div>
+            <p class="rp-rank-range" id="rp-rank-range"></p>
+            <p class="rp-meta" id="rp-percentile"></p>
+            <p class="rp-meta" id="rp-confidence"></p>
+          </div>
+
+          <div class="rp-card">
+            <h3>Selection probability</h3>
+            <div class="rp-prob-block">
+              <span>Qualifying</span>
+              <div class="rp-prob-bar"><div class="rp-prob-fill qual" id="rp-qual-fill"></div></div>
+              <strong id="rp-qual-val">0%</strong>
+            </div>
+            <div class="rp-prob-block">
+              <span id="rp-sel-label">Selection</span>
+              <div class="rp-prob-bar"><div class="rp-prob-fill sel" id="rp-sel-fill"></div></div>
+              <strong id="rp-sel-val">0%</strong>
+            </div>
+            <span class="rp-status-badge" id="rp-sel-status">—</span>
+          </div>
+
+          <div class="rp-card">
+            <h3>Mock performance</h3>
+            <ul class="rp-perf-list" id="rp-perf-list"></ul>
+          </div>
+        </div>
+
+        <div class="rp-grid">
+          <div class="rp-card rp-span-7">
+            <h3>Future performance trend</h3>
+            <p class="rp-trend-summary" id="rp-trend-summary"></p>
+            <div class="rp-chart-wrap"><canvas id="rp-chart-trend"></canvas></div>
+          </div>
+          <div class="rp-card rp-span-5">
+            <h3>Improvement suggestions</h3>
+            <div id="rp-suggestions" class="rp-suggestions"></div>
+          </div>
+
+          <div class="rp-card rp-span-12">
+            <h3>Recent mock tests analyzed</h3>
+            <div class="rp-table-wrap">
+              <table class="rp-table" id="rp-tests-table">
+                <thead>
+                  <tr>
+                    <th>Test</th>
+                    <th>Type</th>
+                    <th>Score</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <hr />
+      <p>© 2024 Sharda Setu — AI Rank Prediction (heuristic model)</p>
+    </div>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="rank-prediction.js"></script>
+  <script src="pwa.js" defer></script>
+</body>
+</html>

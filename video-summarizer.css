@@ -1,0 +1,426 @@
+/* YouTube Video Summarizer */
+:root {
+  --vs-bg: #f8fafc;
+  --vs-surface: #ffffff;
+  --vs-border: #e2e8f0;
+  --vs-text: #0f172a;
+  --vs-muted: #64748b;
+  --vs-primary: #dc2626;
+  --vs-primary-dark: #b91c1c;
+  --vs-accent: #7c3aed;
+  --vs-radius: 12px;
+}
+
+[data-theme="dark"] {
+  --vs-bg: #0f172a;
+  --vs-surface: #1e293b;
+  --vs-border: #334155;
+  --vs-text: #f1f5f9;
+  --vs-muted: #94a3b8;
+}
+
+.vs-page {
+  min-height: calc(100vh - 72px);
+  background: var(--vs-bg);
+  color: var(--vs-text);
+}
+
+.vs-hero {
+  background: linear-gradient(120deg, #7f1d1d, #dc2626 40%, #7c3aed);
+  color: #fff;
+  padding: 36px 20px;
+  text-align: center;
+}
+
+.vs-hero h1 {
+  margin: 0 0 10px;
+  font-size: clamp(1.35rem, 4vw, 2rem);
+  font-weight: 800;
+}
+
+.vs-hero p {
+  margin: 0 auto;
+  max-width: 620px;
+  opacity: 0.92;
+  font-size: 0.95rem;
+}
+
+.vs-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px 20px 48px;
+}
+
+.vs-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.vs-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 340px) 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.vs-panel {
+  background: var(--vs-surface);
+  border: 1px solid var(--vs-border);
+  border-radius: var(--vs-radius);
+  padding: 22px;
+}
+
+.vs-panel h2 {
+  margin: 0 0 16px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.vs-field {
+  margin-bottom: 14px;
+}
+
+.vs-field label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--vs-muted);
+}
+
+.vs-field input,
+.vs-field select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--vs-border);
+  border-radius: 8px;
+  font: inherit;
+  background: var(--vs-bg);
+  color: var(--vs-text);
+  box-sizing: border-box;
+}
+
+.vs-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.vs-btn-primary {
+  width: 100%;
+  background: var(--vs-primary);
+  color: #fff;
+}
+
+.vs-btn-primary:hover:not(:disabled) {
+  background: var(--vs-primary-dark);
+}
+
+.vs-btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.vs-btn-outline {
+  background: transparent;
+  border: 1px solid var(--vs-border);
+  color: var(--vs-text);
+}
+
+.vs-status {
+  margin-top: 10px;
+  font-size: 0.82rem;
+  color: #b45309;
+}
+
+.vs-guest {
+  text-align: center;
+  padding: 48px 20px;
+  background: var(--vs-surface);
+  border-radius: var(--vs-radius);
+  border: 1px solid var(--vs-border);
+}
+
+.vs-output-empty,
+.vs-loading {
+  text-align: center;
+  padding: 48px 20px;
+  color: var(--vs-muted);
+}
+
+.vs-hint {
+  font-size: 0.85rem;
+  color: var(--vs-muted);
+  margin-top: 8px;
+}
+
+.vs-hint a {
+  color: var(--vs-accent);
+}
+
+.vs-spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 16px;
+  border: 3px solid var(--vs-border);
+  border-top-color: var(--vs-primary);
+  border-radius: 50%;
+  animation: vs-spin 0.8s linear infinite;
+}
+
+@keyframes vs-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.vs-history {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--vs-border);
+}
+
+.vs-history-title {
+  font-size: 0.85rem !important;
+  margin-bottom: 10px !important;
+}
+
+.vs-history-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  border: 1px solid var(--vs-border);
+  border-radius: 8px;
+  background: var(--vs-bg);
+  color: var(--vs-text);
+  cursor: pointer;
+  font: inherit;
+}
+
+.vs-history-item:hover {
+  border-color: var(--vs-primary);
+}
+
+.vs-result-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.vs-result-head h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.vs-meta {
+  font-size: 0.85rem;
+  color: var(--vs-muted);
+  margin-top: 6px;
+}
+
+.vs-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #fef3c7;
+  color: #92400e;
+  margin-left: 8px;
+}
+
+[data-theme="dark"] .vs-badge {
+  background: #422006;
+  color: #fcd34d;
+}
+
+.vs-thumb {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 8px;
+  margin-top: 12px;
+}
+
+.vs-export-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.vs-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--vs-border);
+  padding-bottom: 10px;
+}
+
+.vs-tab {
+  padding: 8px 14px;
+  border: none;
+  background: transparent;
+  color: var(--vs-muted);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+.vs-tab.active {
+  background: rgba(220, 38, 38, 0.12);
+  color: var(--vs-primary);
+}
+
+.vs-tab-panel {
+  display: none;
+}
+
+.vs-tab-panel.active {
+  display: block;
+}
+
+.vs-summary-text {
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+.vs-key-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  line-height: 1.7;
+}
+
+.vs-concept-card {
+  padding: 14px;
+  border: 1px solid var(--vs-border);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: var(--vs-bg);
+}
+
+.vs-concept-card strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.vs-formula {
+  padding: 12px 14px;
+  border-left: 3px solid var(--vs-accent);
+  background: var(--vs-bg);
+  margin-bottom: 10px;
+  border-radius: 0 8px 8px 0;
+  font-family: ui-monospace, monospace;
+  font-size: 0.92rem;
+}
+
+.vs-question {
+  padding: 16px;
+  border: 1px solid var(--vs-border);
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.vs-question h4 {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+}
+
+.vs-options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.vs-options li {
+  margin-bottom: 6px;
+}
+
+.vs-options button {
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border: 1px solid var(--vs-border);
+  border-radius: 8px;
+  background: var(--vs-surface);
+  color: var(--vs-text);
+  cursor: pointer;
+  font: inherit;
+}
+
+.vs-options button:hover {
+  border-color: var(--vs-accent);
+}
+
+.vs-options button.correct {
+  border-color: #16a34a;
+  background: rgba(22, 163, 74, 0.1);
+}
+
+.vs-options button.wrong {
+  border-color: #dc2626;
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.vs-explanation {
+  margin-top: 10px;
+  font-size: 0.88rem;
+  color: var(--vs-muted);
+  display: none;
+}
+
+.vs-explanation.show {
+  display: block;
+}
+
+.vs-reveal-btn {
+  margin-top: 10px;
+  font-size: 0.85rem;
+}
+
+.vs-markdown {
+  line-height: 1.65;
+}
+
+.vs-markdown p {
+  margin: 0 0 0.75em;
+}
+
+.vs-timestamps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.vs-ts-chip {
+  font-size: 0.8rem;
+  padding: 6px 10px;
+  background: var(--vs-bg);
+  border: 1px solid var(--vs-border);
+  border-radius: 999px;
+}
+
+@media (max-width: 900px) {
+  .vs-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .vs-result-head {
+    flex-direction: column;
+  }
+}

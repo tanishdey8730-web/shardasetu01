@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+(function(){var b="",h=location.hostname;if(/\.github\.io$/i.test(h)){var s=location.pathname.split("/").filter(Boolean)[0];if(s&&!/\.html$/i.test(s))b="/"+s+"/";}window.SHARDA_BASE=b;if(b){var e=document.createElement("base");e.href=b;document.head.appendChild(e);}})();
+  </script>
+  <title>Admin Dashboard — Sharda Setu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="admin-dashboard.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <meta name="theme-color" content="#1a237e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Sharda Setu" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.svg" />
+  <link rel="stylesheet" href="pwa.css" />
+</head>
+<body>
+  <div id="adm-guest" class="adm-guest" hidden>
+    <h1>Admin access required</h1>
+    <p id="adm-guest-msg">Sign in with an administrator account.</p>
+    <p style="margin-top:20px"><a href="login.html?next=admin-dashboard.html" class="btn btn-cta">Sign In</a></p>
+  </div>
+
+  <div id="adm-app" class="adm-layout" hidden>
+    <div class="adm-overlay" id="adm-overlay"></div>
+    <aside class="adm-sidebar" id="adm-sidebar">
+      <div class="adm-sidebar-head">
+        <strong>Sharda Setu</strong>
+        <span>Admin Console</span>
+      </div>
+      <nav class="adm-nav" id="adm-nav">
+        <button type="button" data-section="dashboard" class="active">📊 Dashboard</button>
+        <button type="button" data-section="users">👥 Users</button>
+        <button type="button" data-section="courses">📚 Courses</button>
+        <button type="button" data-section="videos">▶️ Videos</button>
+        <button type="button" data-section="notes">📒 Notes</button>
+        <button type="button" data-section="approvals">✅ Approvals</button>
+        <button type="button" data-section="analytics">📈 Analytics</button>
+        <button type="button" data-section="reports">📄 Reports</button>
+        <a href="file-manager.html" class="adm-nav-link">☁️ Cloud Files</a>
+      </nav>
+      <div class="adm-sidebar-foot">
+        <a href="index.html">← Back to site</a>
+      </div>
+    </aside>
+
+    <div class="adm-main">
+      <header class="adm-topbar">
+        <button type="button" class="adm-menu-btn" id="adm-menu-btn" aria-label="Menu">☰</button>
+        <h1 id="adm-page-title">Dashboard</h1>
+        <div class="adm-topbar-actions">
+          <button type="button" class="adm-btn adm-btn-ghost" id="adm-theme-btn">🌙</button>
+          <button type="button" class="adm-btn adm-btn-ghost" id="adm-refresh-btn">Refresh</button>
+        </div>
+      </header>
+
+      <div class="adm-content">
+        <section class="adm-section active" id="sec-dashboard" data-section="dashboard">
+          <div class="adm-stats" id="adm-dash-stats"></div>
+          <div class="adm-card">
+            <h2>Activity (last 7 days)</h2>
+            <div class="adm-chart-box"><canvas id="adm-activity-chart"></canvas></div>
+          </div>
+          <div class="adm-card">
+            <h2>Pending approvals</h2>
+            <div id="adm-dash-pending"></div>
+          </div>
+        </section>
+
+        <section class="adm-section" id="sec-users" data-section="users" hidden>
+          <div class="adm-card">
+            <h2>User management</h2>
+            <div class="adm-toolbar">
+              <input type="search" id="users-q" placeholder="Search name or email…" />
+              <select id="users-role">
+                <option value="">All roles</option>
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+                <option value="admin">Admin</option>
+              </select>
+              <button type="button" class="adm-btn adm-btn-primary" id="users-search">Search</button>
+            </div>
+            <div class="adm-table-wrap">
+              <table class="adm-table" id="users-table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Joined</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="adm-section" id="sec-courses" data-section="courses" hidden>
+          <div class="adm-card">
+            <h2>Course management</h2>
+            <div class="adm-toolbar">
+              <input type="search" id="courses-q" placeholder="Search courses…" />
+              <select id="courses-source">
+                <option value="">All sources</option>
+                <option value="government">Government</option>
+                <option value="it">IT</option>
+                <option value="custom">Custom</option>
+                <option value="pending">Pending</option>
+              </select>
+              <button type="button" class="adm-btn adm-btn-primary" id="courses-search">Filter</button>
+              <button type="button" class="adm-btn adm-btn-ghost" id="courses-add">+ Add course</button>
+            </div>
+            <div class="adm-table-wrap">
+              <table class="adm-table" id="courses-table">
+                <thead>
+                  <tr><th>Name</th><th>ID</th><th>Source</th><th>Status</th><th>Actions</th></tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="adm-section" id="sec-videos" data-section="videos" hidden>
+          <div class="adm-card">
+            <h2>Video management</h2>
+            <div class="adm-toolbar">
+              <input type="search" id="videos-q" placeholder="Search title or ID…" />
+              <input type="text" id="videos-exam" placeholder="Exam ID filter" />
+              <select id="videos-status">
+                <option value="">All status</option>
+                <option value="published">Published</option>
+                <option value="pending">Pending</option>
+              </select>
+              <button type="button" class="adm-btn adm-btn-primary" id="videos-search">Filter</button>
+              <button type="button" class="adm-btn adm-btn-ghost" id="videos-add">+ Add video</button>
+            </div>
+            <div class="adm-table-wrap">
+              <table class="adm-table" id="videos-table">
+                <thead>
+                  <tr><th>Title</th><th>Exam</th><th>Subject</th><th>Type</th><th>Status</th><th>Actions</th></tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="adm-section" id="sec-notes" data-section="notes" hidden>
+          <div class="adm-card">
+            <h2>Notes management</h2>
+            <div class="adm-toolbar">
+              <input type="search" id="notes-q" placeholder="Search title…" />
+              <select id="notes-kind">
+                <option value="">All types</option>
+                <option value="notes">AI Notes</option>
+                <option value="summary">Video summaries</option>
+              </select>
+              <button type="button" class="adm-btn adm-btn-primary" id="notes-search">Filter</button>
+            </div>
+            <div class="adm-table-wrap">
+              <table class="adm-table" id="notes-table">
+                <thead>
+                  <tr><th>Title</th><th>Type</th><th>User</th><th>Created</th><th>Status</th><th>Actions</th></tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="adm-section" id="sec-approvals" data-section="approvals" hidden>
+          <div class="adm-card">
+            <h2>Content approval</h2>
+            <div class="adm-toolbar">
+              <select id="approvals-status">
+                <option value="pending">Pending</option>
+                <option value="approved">Approved</option>
+                <option value="rejected">Rejected</option>
+              </select>
+              <select id="approvals-type">
+                <option value="">All types</option>
+                <option value="course">Course</option>
+                <option value="video">Video</option>
+                <option value="note">Note</option>
+              </select>
+              <input type="search" id="approvals-q" placeholder="Search…" />
+              <button type="button" class="adm-btn adm-btn-primary" id="approvals-search">Filter</button>
+            </div>
+            <div class="adm-table-wrap">
+              <table class="adm-table" id="approvals-table">
+                <thead>
+                  <tr><th>Title</th><th>Type</th><th>Submitted</th><th>Status</th><th>Actions</th></tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="adm-section" id="sec-analytics" data-section="analytics" hidden>
+          <div class="adm-stats" id="adm-analytics-stats"></div>
+          <div class="adm-card">
+            <h2>Tests by exam</h2>
+            <div id="adm-tests-by-exam"></div>
+          </div>
+        </section>
+
+        <section class="adm-section" id="sec-reports" data-section="reports" hidden>
+          <div class="adm-card">
+            <h2>Reports</h2>
+            <div class="adm-toolbar">
+              <select id="report-type">
+                <option value="summary">Summary report</option>
+                <option value="users">Users report</option>
+                <option value="content">Content report</option>
+              </select>
+              <button type="button" class="adm-btn adm-btn-primary" id="report-load">Generate</button>
+              <button type="button" class="adm-btn adm-btn-ghost" id="report-print">Print</button>
+              <button type="button" class="adm-btn adm-btn-ghost" id="report-download">Download JSON</button>
+            </div>
+            <pre id="report-output" style="background:#f8fafc;padding:16px;border-radius:8px;overflow:auto;max-height:480px;font-size:0.8rem"></pre>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <div class="adm-modal" id="adm-modal" hidden>
+    <div class="adm-modal-box">
+      <h2 id="modal-title">Add item</h2>
+      <form id="modal-form"></form>
+      <div class="adm-modal-actions">
+        <button type="button" class="adm-btn adm-btn-ghost" id="modal-cancel">Cancel</button>
+        <button type="submit" form="modal-form" class="adm-btn adm-btn-primary" id="modal-save">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="admin-dashboard.js"></script>
+  <script src="pwa.js" defer></script>
+</body>
+</html>

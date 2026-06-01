@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script>
+(function(){var b="",h=location.hostname;if(/\.github\.io$/i.test(h)){var s=location.pathname.split("/").filter(Boolean)[0];if(s&&!/\.html$/i.test(s))b="/"+s+"/";}window.SHARDA_BASE=b;if(b){var e=document.createElement("base");e.href=b;document.head.appendChild(e);}})();
+  </script>
+  <title>Live Class — Sharda Setu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="ui-enhancements.css" />
+  <link rel="stylesheet" href="live-room.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+
+  <meta name="theme-color" content="#1a237e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Sharda Setu" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.svg" />
+  <link rel="stylesheet" href="pwa.css" />
+</head>
+<body class="lr-body">
+  <header class="lr-topbar">
+    <a href="live-rooms.html" class="lr-back">← Live classes</a>
+    <h1 id="lr-room-title">Live class</h1>
+    <div class="lr-topbar-right">
+      <span class="lr-live-dot" id="lr-live-dot"></span>
+      <span id="lr-connection" class="lr-conn">Connecting…</span>
+      <div id="lr-notif-bell" class="lr-bell" title="Notifications">🔔<span id="lr-notif-count" hidden>0</span></div>
+    </div>
+  </header>
+
+  <div id="lr-guest" class="lr-guest" hidden>
+    <h2>Sign in to join live class</h2>
+    <a href="login.html" class="btn btn-cta" id="lr-login-link">Sign In</a>
+  </div>
+
+  <div id="lr-app" class="lr-layout" hidden>
+    <section class="lr-stage">
+      <div class="lr-video-wrap" id="lr-video-wrap">
+        <p class="lr-video-placeholder">Video stream will appear here when host starts.</p>
+      </div>
+      <div class="lr-class-controls" id="lr-host-controls" hidden>
+        <input type="text" id="lr-video-url" placeholder="YouTube embed URL" />
+        <button type="button" class="btn btn-outline" id="lr-set-video">Update stream</button>
+      </div>
+    </section>
+
+    <aside class="lr-sidebar">
+      <div class="lr-panel">
+        <h3>Online <span id="lr-presence-count">0</span></h3>
+        <ul id="lr-presence" class="lr-presence-list"></ul>
+      </div>
+
+      <div class="lr-panel lr-chat-panel">
+        <h3>Live chat</h3>
+        <div id="lr-chat" class="lr-chat-log"></div>
+        <form id="lr-chat-form" class="lr-chat-form">
+          <input type="text" id="lr-chat-input" placeholder="Type a message…" maxlength="2000" autocomplete="off" />
+          <button type="submit" class="btn btn-cta">Send</button>
+        </form>
+      </div>
+
+      <div class="lr-panel">
+        <h3>Live poll</h3>
+        <div id="lr-poll-area"></div>
+        <div id="lr-poll-create" hidden>
+          <input type="text" id="lr-poll-q" placeholder="Poll question" />
+          <input type="text" class="lr-poll-opt" placeholder="Option 1" />
+          <input type="text" class="lr-poll-opt" placeholder="Option 2" />
+          <button type="button" class="btn btn-outline" id="lr-poll-start">Start poll</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div id="lr-toasts" class="lr-toasts" aria-live="polite"></div>
+
+  <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+  <script src="auth.js"></script>
+  <script src="realtime-client.js"></script>
+  <script src="live-room.js"></script>
+  <script src="pwa.js" defer></script>
+</body>
+</html>

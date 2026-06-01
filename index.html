@@ -12,6 +12,15 @@
   <link rel="stylesheet" href="online-education.css" />
   <link rel="stylesheet" href="ui-enhancements.css" />
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+
+  <meta name="theme-color" content="#1a237e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Sharda Setu" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.svg" />
+  <link rel="stylesheet" href="pwa.css" />
 </head>
 <body>
   <header class="site-header">
@@ -30,6 +39,20 @@
         <a href="features.html">Features</a>
         <a href="online-education.html" class="nav-edu">Online Education</a>
         <a href="offline.html">Offline Library</a>
+        <a href="learn-game.html">Quiz</a>
+        <a href="study-assistant.html">Study Assistant</a>
+        <a href="learning-roadmap.html">My Roadmap</a>
+        <a href="mock-tests.html">Mock Tests</a>
+        <a href="question-generator.html">Questions</a>
+        <a href="rank-prediction.html">Rank AI</a>
+        <a href="exam-readiness.html">Readiness</a>
+        <a href="performance-analytics.html">Analytics</a>
+        <a href="analytics-dashboard.html" class="nav-edu">Analytics+</a>
+        <a href="notes-generator.html">Notes</a>
+        <a href="video-summarizer.html">Summarizer</a>
+        <a href="live-rooms.html">Live</a>
+        <a href="file-manager.html">Files</a>
+        <a href="student-dashboard.html">Dashboard</a>
         <a href="learn-game.html">Quiz</a>
       </nav>
 
@@ -166,11 +189,11 @@
         <h2 class="section-title">Powerful Features for Modern Learning</h2>
         <p class="section-lead">Everything you need for effective online education, optimized for low bandwidth environments</p>
         <div class="cards-grid">
-          <article class="card">
+          <a class="card card-link" href="live-rooms.html">
             <div class="icon">👥</div>
             <h3>Live Interactive Classes</h3>
-            <p>Join real-time classes with video, audio, and chat. Designed to work on slow internet connections.</p>
-          </article>
+            <p>Socket.io live video, chat, polls, presence &amp; notifications — message delivery status.</p>
+          </a>
           <article class="card">
             <div class="icon">📄</div>
             <h3>Notes Sharing</h3>
@@ -190,6 +213,81 @@
             <div class="icon">🎮</div>
             <h3>Quiz</h3>
             <p>Quiz games in Maths, Physics, Chemistry, General Studies — plus DSA, Python, Aptitude &amp; TCS NQT for IT students. Score medals and become a Perfect Learner!</p>
+          </a>
+          <a class="card card-link" href="study-assistant.html">
+            <div class="icon">🤖</div>
+            <h3>AI Study Assistant</h3>
+            <p>Ask exam doubts for SSC, NDA, CDS, AFCAT &amp; RRB — concepts, formulas, shortcuts, and step-by-step help with chat history.</p>
+          </a>
+          <a class="card card-link" href="learning-roadmap.html">
+            <div class="icon">🗓️</div>
+            <h3>Personalized Roadmap</h3>
+            <p>AI day-wise study plan from your exam date — weekly targets, progress tracking, and auto catch-up when you miss tasks.</p>
+          </a>
+          <a class="card card-link" href="mock-tests.html">
+            <div class="icon">📝</div>
+            <h3>Mock Tests &amp; Examination</h3>
+            <p>Timed MCQ papers with negative marking — chapter tests, full mocks, PYQs, auto evaluation &amp; result dashboard.</p>
+          </a>
+          <a class="card card-link" href="question-generator.html">
+            <div class="icon">❓</div>
+            <h3>AI Question Generator</h3>
+            <p>Topic-wise MCQs, subjective &amp; PYQ-style questions — Easy/Medium/Hard with instant answer keys &amp; explanations.</p>
+          </a>
+          <a class="card card-link" href="rank-prediction.html">
+            <div class="icon">🏆</div>
+            <h3>AI Rank Prediction</h3>
+            <p>Predict rank &amp; selection probability from mocks — future score trends &amp; personalized improvement plan.</p>
+          </a>
+          <a class="card card-link" href="exam-readiness.html">
+            <div class="icon">🎯</div>
+            <h3>Exam Readiness Score</h3>
+            <p>Readiness calculation, subject-wise scores, weakness analysis, recommendation engine &amp; historical tracking.</p>
+          </a>
+          <a class="card card-link" href="performance-analytics.html">
+            <div class="icon">📊</div>
+            <h3>Performance Analytics</h3>
+            <p>AI weak/strong topic detection, readiness score, success probability, charts &amp; personalized study recommendations.</p>
+          </a>
+          <a class="card card-link" href="analytics-dashboard.html">
+            <div class="icon">📈</div>
+            <h3>Advanced Analytics Dashboard</h3>
+            <p>Daily study hours, weekly progress, subject performance, user growth &amp; exam readiness — Recharts with interactive filters.</p>
+          </a>
+          <a class="card card-link" href="file-manager.html">
+            <div class="icon">☁️</div>
+            <h3>Cloud File Manager</h3>
+            <p>Cloudinary storage for images, PDFs &amp; certificates — secure authenticated uploads, signed URLs &amp; file dashboard.</p>
+          </a>
+          <a class="card card-link" href="notes-generator.html">
+            <div class="icon">📒</div>
+            <h3>AI Notes Generator</h3>
+            <p>Generate study notes from YouTube videos or PDFs — concepts, formulas, revision sheets — export PDF &amp; DOCX.</p>
+          </a>
+          <a class="card card-link" href="video-summarizer.html">
+            <div class="icon">▶️</div>
+            <h3>YouTube Video Summarizer</h3>
+            <p>Transcript-based AI summary — key concepts, formulas, practice MCQs, revision notes — export PDF.</p>
+          </a>
+          <a class="card card-link" href="student-dashboard.html">
+            <div class="icon">📊</div>
+            <h3>Student Dashboard</h3>
+            <p>Study streak, hours, courses completed, exam readiness, goals, charts &amp; personalized recommendations.</p>
+          </a>
+          <a class="card card-link" href="profile.html">
+            <div class="icon">👤</div>
+            <h3>Student Profile</h3>
+            <p>Manage your profile, test history, certificates, saved courses, achievements &amp; progress reports.</p>
+          </a>
+          <a class="card card-link" href="teacher-dashboard.html" id="home-teacher-card" hidden>
+            <div class="icon">👨‍🏫</div>
+            <h3>Teacher Dashboard</h3>
+            <p>Upload lessons &amp; notes, create quizzes, manage assignments, track students &amp; moderate discussions.</p>
+          </a>
+          <a class="card card-link" href="admin-dashboard.html" id="home-admin-card" hidden>
+            <div class="icon">🛡️</div>
+            <h3>Admin Dashboard</h3>
+            <p>User, course, video &amp; notes management — analytics, reports, and content approval.</p>
           </a>
           <a class="card card-link" href="online-education.html">
             <div class="icon">
@@ -322,5 +420,6 @@
 
   <script src="auth.js"></script>
   <script src="home.js"></script>
+  <script src="pwa.js" defer></script>
 </body>
 </html>

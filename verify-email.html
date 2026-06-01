@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+(function(){var b="",h=location.hostname;if(/\.github\.io$/i.test(h)){var s=location.pathname.split("/").filter(Boolean)[0];if(s&&!/\.html$/i.test(s))b="/"+s+"/";}window.SHARDA_BASE=b;if(b){var e=document.createElement("base");e.href=b;document.head.appendChild(e);}})();
+  </script>
+  <title>Verify Email — Sharda Setu</title>
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="ui-enhancements.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+
+  <meta name="theme-color" content="#1a237e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Sharda Setu" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.svg" />
+  <link rel="stylesheet" href="pwa.css" />
+</head>
+<body>
+  <div class="auth-layout">
+    <div class="container" style="max-width:480px;margin:48px auto">
+      <div class="login-box" id="verify-panel">
+        <h1>Email Verification</h1>
+        <p id="verify-msg" class="subtitle">Verifying…</p>
+        <p id="verify-error" class="form-error" role="alert"></p>
+        <form id="resend-form" hidden style="margin-top:20px">
+          <label class="label" for="email">Resend to</label>
+          <input type="email" id="email" required style="width:100%;padding:10px;margin-bottom:12px;border-radius:8px;border:1px solid #ddd">
+          <button type="submit" class="btn">Resend verification email</button>
+        </form>
+        <p class="signup" style="margin-top:16px"><a href="index.html">Home</a> · <a href="profile.html">Profile</a></p>
+      </div>
+    </div>
+  </div>
+  <script src="auth.js"></script>
+  <script>
+    const token = new URLSearchParams(location.search).get("token");
+    const msg = document.getElementById("verify-msg");
+    const err = document.getElementById("verify-error");
+    const resendForm = document.getElementById("resend-form");
+
+    async function run() {
+      if (token) {
+        try {
+          const data = await ShardaAuth.verifyEmail(token);
+          msg.textContent = data.message || "Email verified!";
+          setTimeout(() => { window.location.href = "profile.html"; }, 1500);
+          return;
+        } catch (ex) {
+          err.textContent = ex.message;
+          msg.textContent = "Verification failed";
+          resendForm.hidden = false;
+          return;
+        }
+      }
+      const user = ShardaAuth.getUser();
+      if (user?.emailVerified) {
+        msg.textContent = "Your email is already verified.";
+        return;
+      }
+      msg.textContent = "Check your inbox for the verification link, or resend below.";
+      resendForm.hidden = false;
+      if (user?.email) document.getElementById("email").value = user.email;
+    }
+
+    resendForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      err.textContent = "";
+      try {
+        const data = await ShardaAuth.resendVerification(document.getElementById("email").value);
+        msg.textContent = data.message;
+      } catch (ex) {
+        err.textContent = ex.message;
+      }
+    });
+
+    run();
+  </script>
+  <script src="pwa.js" defer></script>
+</body>
+</html>

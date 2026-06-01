@@ -12,7 +12,30 @@
       "phone": "",
       "city": "",
       "createdAt": "2026-05-24T08:17:56.219Z",
-      "updatedAt": "2026-05-24T08:17:56.237Z"
+      "updatedAt": "2026-05-24T08:17:56.237Z",
+      "emailVerified": true,
+      "authProvider": "local"
+    },
+    {
+      "id": "c7c3c6fa7bd135721d6c0aeb",
+      "name": "Auth Test",
+      "email": "authtest@example.com",
+      "passwordHash": "$2b$12$2bwK4OmmhtaCnmQflhjXreosQCxjQCpnECu9PNS6ETZJe.GAj5gly",
+      "role": "student",
+      "avatar": "https://ui-avatars.com/api/?name=Auth%20Test&background=2b6ef4&color=fff&size=128",
+      "examGoal": "",
+      "bio": "",
+      "phone": "",
+      "city": "",
+      "emailVerified": false,
+      "emailVerificationToken": "9839023011e24cda63254861cf6a511aa46a6d5304f6fc18c1624d0e4f400552",
+      "emailVerificationExpires": "2026-06-02T08:56:59.371Z",
+      "passwordResetToken": null,
+      "passwordResetExpires": null,
+      "googleId": null,
+      "authProvider": "local",
+      "createdAt": "2026-06-01T08:56:59.400Z",
+      "updatedAt": "2026-06-01T08:56:59.400Z"
     }
   ],
   "sessions": [
@@ -20,6 +43,13 @@
       "token": "069cbfd4f769f4b06c33cdafef9e5b69a91e28d6aa87e451bd5780b0dd4d5711",
       "userId": "c895cf87548167ba9817a664",
       "expiresAt": "2026-05-31T08:17:56.239Z"
+    }
+  ],
+  "refreshTokens": [
+    {
+      "tokenHash": "18a9df4c22c0c056595abbb5176a2404379920ae9d2f2ca68c7b71bfabbac286",
+      "userId": "c7c3c6fa7bd135721d6c0aeb",
+      "expiresAt": "2026-06-08T08:57:00.000Z"
     }
   ]
 }

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script>
+(function(){var b="",h=location.hostname;if(/\.github\.io$/i.test(h)){var s=location.pathname.split("/").filter(Boolean)[0];if(s&&!/\.html$/i.test(s))b="/"+s+"/";}window.SHARDA_BASE=b;if(b){var e=document.createElement("base");e.href=b;document.head.appendChild(e);}})();
+  </script>
+  <title>Student Dashboard — Sharda Setu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="ui-enhancements.css" />
+  <link rel="stylesheet" href="student-dashboard.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <meta name="theme-color" content="#1a237e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Sharda Setu" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.svg" />
+  <link rel="stylesheet" href="pwa.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-link">
+        <img src="assets/logo.svg" alt="" class="logo-img" width="44" height="44"/>
+        <div class="brand-text">
+          <div class="brand-name">Sharda Setu</div>
+          <div class="brand-tagline">Student Dashboard</div>
+        </div>
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="student-dashboard.html" class="nav-edu">Dashboard</a>
+        <a href="mock-tests.html">Mock Tests</a>
+        <a href="online-education.html">Education</a>
+      </nav>
+      <div class="auth" id="auth-slot"></div>
+    </div>
+  </header>
+
+  <main class="sd-page">
+    <div class="sd-wrap">
+      <div id="sd-guest" class="sd-guest" hidden>
+        <h1>Your learning dashboard</h1>
+        <p>Sign in to track streaks, study hours, readiness, and goals.</p>
+        <p style="margin-top:20px"><a href="login.html" class="btn btn-cta">Sign In</a></p>
+      </div>
+
+      <div id="sd-loading" class="sd-loading">Loading dashboard…</div>
+
+      <div id="sd-app" hidden>
+        <div class="sd-welcome">
+          <div class="sd-welcome-user">
+            <img id="sd-avatar" src="" alt="" width="52" height="52"/>
+            <div>
+              <h1 id="sd-greeting">Welcome back</h1>
+              <p id="sd-subtitle">Your exam prep at a glance</p>
+            </div>
+          </div>
+          <button type="button" class="btn btn-ghost" id="sd-theme-btn">🌙</button>
+        </div>
+
+        <div id="sd-reward-toasts" class="sd-toasts" aria-live="polite"></div>
+
+        <div class="sd-kpi-grid" id="sd-kpis"></div>
+
+        <section class="sd-gamification" id="sd-gamification" hidden>
+          <div class="sd-gami-header">
+            <div class="sd-level-card" id="sd-level-card"></div>
+            <div class="sd-rank-card" id="sd-rank-card"></div>
+          </div>
+          <div class="sd-gami-grid">
+            <div class="sd-card">
+              <h2>Daily &amp; weekly challenges</h2>
+              <div id="sd-challenges"></div>
+            </div>
+            <div class="sd-card">
+              <h2>Badges</h2>
+              <div class="sd-badges" id="sd-badges"></div>
+            </div>
+            <div class="sd-card sd-span-12">
+              <h2>Leaderboard <span id="sd-lb-tab" class="sd-lb-tabs"><button type="button" class="active" data-lb="alltime">All-time</button><button type="button" data-lb="weekly">This week</button></span></h2>
+              <div class="sd-leaderboard" id="sd-leaderboard"></div>
+            </div>
+            <div class="sd-card sd-span-6">
+              <h2>Achievements</h2>
+              <div id="sd-achievements"></div>
+            </div>
+            <div class="sd-card sd-span-6">
+              <h2>Recent rewards</h2>
+              <ul class="sd-notifications" id="sd-notifications"></ul>
+            </div>
+          </div>
+        </section>
+
+        <div class="sd-grid">
+          <div class="sd-card sd-span-8">
+            <h2>Study hours (last 7 days)</h2>
+            <div class="sd-chart"><canvas id="chart-weekly"></canvas></div>
+          </div>
+          <div class="sd-card sd-span-4">
+            <h2>Exam readiness <a href="exam-readiness.html" style="font-size:0.72rem;font-weight:600;margin-left:6px">Full report →</a></h2>
+            <div class="sd-readiness-ring">
+              <div class="sd-readiness-val" id="sd-readiness-val">—</div>
+              <span class="pa-level-badge" id="sd-readiness-label" style="display:inline-block;padding:4px 12px;border-radius:999px;background:rgba(37,99,235,0.12);font-size:0.8rem;font-weight:700;color:var(--sd-primary)">—</span>
+              <p class="sd-prob">Success probability: <strong id="sd-prob-val">—%</strong></p>
+            </div>
+            <div class="sd-chart sm"><canvas id="chart-roadmap"></canvas></div>
+          </div>
+
+          <div class="sd-card sd-span-6">
+            <h2>Test score progress</h2>
+            <div class="sd-chart"><canvas id="chart-scores"></canvas></div>
+          </div>
+          <div class="sd-card sd-span-6">
+            <h2>Recent activity</h2>
+            <ul class="sd-activity" id="sd-activity"></ul>
+          </div>
+
+          <div class="sd-card sd-span-4">
+            <h2>Upcoming goals</h2>
+            <ul class="sd-goals" id="sd-goals"></ul>
+            <div class="sd-add-goal">
+              <input type="text" id="sd-new-goal" placeholder="Add a goal…" maxlength="120" />
+              <input type="date" id="sd-new-goal-date" aria-label="Due date" />
+              <button type="button" class="sd-btn-sm" id="sd-add-goal-btn">Add</button>
+            </div>
+          </div>
+          <div class="sd-card sd-span-4">
+            <h2>Recommendations</h2>
+            <div class="sd-recs" id="sd-recs"></div>
+          </div>
+          <div class="sd-card sd-span-4">
+            <h2>Quick actions</h2>
+            <div class="sd-quick" id="sd-quick"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <hr />
+      <p>© 2024 Sharda Setu. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="student-dashboard.js"></script>
+  <script src="pwa.js" defer></script>
+</body>
+</html>

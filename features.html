@@ -12,6 +12,15 @@
   <link rel="stylesheet" href="online-education.css">
   <link rel="stylesheet" href="ui-enhancements.css">
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+
+  <meta name="theme-color" content="#1a237e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Sharda Setu" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.svg" />
+  <link rel="stylesheet" href="pwa.css" />
 </head>
 <body>
   <header class="site-header">
@@ -31,6 +40,7 @@
         <a href="online-education.html" class="nav-edu">Online Education</a>
         <a href="offline.html">Offline Library</a>
         <a href="learn-game.html">Quiz</a>
+        <a href="study-assistant.html">Study Assistant</a>
       </nav>
 
       <div class="auth" id="auth-slot"></div>
@@ -77,6 +87,14 @@
           <div>
             <h3>Career Roadmaps</h3>
             <p>Video roadmaps on YouTube · PDF &amp; link roadmaps (Python, Java, DSA, AI/ML, DevOps, Full Stack)</p>
+          </div>
+        </a>
+
+        <a class="feature-card" href="study-assistant.html" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="feature-icon" style="background:#ede9fe;">🤖</div>
+          <div>
+            <h3>AI Study Assistant</h3>
+            <p>SSC, NDA, CDS, AFCAT, RRB doubts · concepts, formulas, shortcuts · voice input &amp; chat history</p>
           </div>
         </a>
 
@@ -257,5 +275,6 @@
 
   <script src="auth.js"></script>
   <script>document.addEventListener("DOMContentLoaded", () => { if (window.ShardaAuth) window.ShardaAuth.renderHeaderAuth(document.getElementById("auth-slot")); });</script>
+  <script src="pwa.js" defer></script>
 </body>
 </html>

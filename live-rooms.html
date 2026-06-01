@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script>
+(function(){var b="",h=location.hostname;if(/\.github\.io$/i.test(h)){var s=location.pathname.split("/").filter(Boolean)[0];if(s&&!/\.html$/i.test(s))b="/"+s+"/";}window.SHARDA_BASE=b;if(b){var e=document.createElement("base");e.href=b;document.head.appendChild(e);}})();
+  </script>
+  <title>Live Classes — Sharda Setu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="ui-enhancements.css" />
+  <link rel="stylesheet" href="live-room.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+
+  <meta name="theme-color" content="#1a237e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Sharda Setu" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.svg" />
+  <link rel="stylesheet" href="pwa.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-link">
+        <img src="assets/logo.svg" alt="" class="logo-img" width="44" height="44"/>
+        <div class="brand-text">
+          <div class="brand-name">Sharda Setu</div>
+          <div class="brand-tagline">Live Classes</div>
+        </div>
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="live-rooms.html" class="nav-edu">Live</a>
+        <a href="online-education.html">Education</a>
+      </nav>
+      <div class="auth" id="auth-slot"></div>
+    </div>
+  </header>
+
+  <main class="lr-list-page">
+    <section class="lr-hero">
+      <h1>Live Classes</h1>
+      <p>Real-time video classes with live chat, polls, presence &amp; notifications — powered by Socket.io</p>
+    </section>
+    <div class="lr-container">
+      <div id="lr-notifications" class="lr-toasts" aria-live="polite"></div>
+      <div id="lr-rooms" class="lr-room-grid">Loading…</div>
+      <div id="lr-create" class="lr-create-card" hidden>
+        <h3>Start a live class (teacher)</h3>
+        <input type="text" id="lr-new-title" placeholder="Class title" />
+        <input type="text" id="lr-new-video" placeholder="YouTube embed URL (optional)" />
+        <button type="button" class="btn btn-cta" id="lr-new-btn">Create &amp; go live</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+  <script src="auth.js"></script>
+  <script src="realtime-client.js"></script>
+  <script src="live-rooms.js"></script>
+  <script src="pwa.js" defer></script>
+</body>
+</html>

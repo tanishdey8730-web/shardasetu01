@@ -1,0 +1,30 @@
+{
+  "rooms": [
+    {
+      "id": "demo-ssc-cgl",
+      "title": "SSC CGL — Quant Live Doubt Session",
+      "description": "Daily live class for quantitative aptitude doubts and shortcuts.",
+      "hostId": "system",
+      "hostName": "Sharda Setu",
+      "examId": "ssc-cgl",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "status": "live",
+      "scheduledAt": null,
+      "createdAt": "2024-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "demo-nda",
+      "title": "NDA — Mathematics Live Class",
+      "description": "Real-time NDA maths preparation with polls and chat.",
+      "hostId": "system",
+      "hostName": "Sharda Setu",
+      "examId": "nda",
+      "videoUrl": "",
+      "status": "scheduled",
+      "scheduledAt": "2026-06-15T18:00:00.000Z",
+      "createdAt": "2024-02-01T10:00:00.000Z"
+    }
+  ],
+  "messages": {},
+  "polls": {}
+}

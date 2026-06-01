@@ -1,0 +1,62 @@
+{
+  "levels": [
+    { "level": 1, "title": "Beginner", "minXp": 0, "icon": "🌱" },
+    { "level": 2, "title": "Learner", "minXp": 100, "icon": "📘" },
+    { "level": 3, "title": "Aspirant", "minXp": 300, "icon": "🎯" },
+    { "level": 4, "title": "Scholar", "minXp": 600, "icon": "⭐" },
+    { "level": 5, "title": "Achiever", "minXp": 1000, "icon": "🏅" },
+    { "level": 6, "title": "Expert", "minXp": 1500, "icon": "💎" },
+    { "level": 7, "title": "Master", "minXp": 2200, "icon": "👑" },
+    { "level": 8, "title": "Champion", "minXp": 3000, "icon": "🔥" },
+    { "level": 9, "title": "Legend", "minXp": 4000, "icon": "⚡" },
+    { "level": 10, "title": "Setu Hero", "minXp": 5500, "icon": "🛡️" }
+  ],
+  "xpRewards": {
+    "daily_login": 15,
+    "quiz_complete": 40,
+    "quiz_gold": 25,
+    "mock_complete": 80,
+    "mock_high_score": 50,
+    "notes_generated": 60,
+    "video_summary": 55,
+    "questions_generated": 45,
+    "roadmap_task": 25,
+    "assistant_chat": 10,
+    "challenge_daily": 100,
+    "challenge_weekly": 300,
+    "achievement": 75
+  },
+  "badges": [
+    { "id": "first_steps", "name": "First Steps", "icon": "👣", "description": "Earn your first XP" },
+    { "id": "quiz_starter", "name": "Quiz Starter", "icon": "🎮", "description": "Complete your first quiz" },
+    { "id": "mock_rookie", "name": "Mock Rookie", "icon": "📝", "description": "Complete your first mock test" },
+    { "id": "gold_mind", "name": "Gold Mind", "icon": "🏆", "description": "Score 90%+ on a quiz" },
+    { "id": "mock_ace", "name": "Mock Ace", "icon": "🎯", "description": "Score 80%+ on a full mock" },
+    { "id": "note_taker", "name": "Note Taker", "icon": "📒", "description": "Generate AI notes" },
+    { "id": "streak_3", "name": "On Fire", "icon": "🔥", "description": "3-day study streak" },
+    { "id": "streak_7", "name": "Week Warrior", "icon": "📅", "description": "7-day study streak" },
+    { "id": "streak_30", "name": "Monthly Master", "icon": "🗓️", "description": "30-day study streak" },
+    { "id": "level_5", "name": "Rising Star", "icon": "⭐", "description": "Reach level 5" },
+    { "id": "level_10", "name": "Setu Hero", "icon": "🛡️", "description": "Reach level 10" },
+    { "id": "xp_1000", "name": "XP Collector", "icon": "💰", "description": "Earn 1000 total XP" },
+    { "id": "challenge_master", "name": "Challenge Master", "icon": "✅", "description": "Complete 10 challenges" }
+  ],
+  "achievements": [
+    { "id": "ach_quiz_10", "name": "Quiz Enthusiast", "icon": "🎮", "description": "Complete 10 quizzes", "target": 10, "metric": "quizzes" },
+    { "id": "ach_mock_5", "name": "Mock Veteran", "icon": "📝", "description": "Complete 5 mock tests", "target": 5, "metric": "mocks" },
+    { "id": "ach_xp_500", "name": "Halfway There", "icon": "💫", "description": "Earn 500 XP", "target": 500, "metric": "xp" },
+    { "id": "ach_notes_3", "name": "Knowledge Builder", "icon": "📚", "description": "Generate 3 note sets", "target": 3, "metric": "notes" }
+  ],
+  "dailyChallengePool": [
+    { "id": "daily_quiz", "title": "Quiz Champion", "description": "Complete 1 quiz today", "metric": "quiz_today", "target": 1, "xp": 100 },
+    { "id": "daily_mock", "title": "Mock Day", "description": "Complete 1 mock test today", "metric": "mock_today", "target": 1, "xp": 100 },
+    { "id": "daily_study", "title": "Study Session", "description": "Log any study activity today", "metric": "activity_today", "target": 1, "xp": 75 },
+    { "id": "daily_score", "title": "Score Hunter", "description": "Score 70%+ on any test today", "metric": "score_70_today", "target": 1, "xp": 120 }
+  ],
+  "weeklyChallengePool": [
+    { "id": "weekly_quiz_5", "title": "Quiz Marathon", "description": "Complete 5 quizzes this week", "metric": "quiz_week", "target": 5, "xp": 300 },
+    { "id": "weekly_mock_2", "title": "Mock Double", "description": "Complete 2 mock tests this week", "metric": "mock_week", "target": 2, "xp": 300 },
+    { "id": "weekly_xp", "title": "XP Grinder", "description": "Earn 400 XP this week", "metric": "xp_week", "target": 400, "xp": 350 },
+    { "id": "weekly_streak", "title": "Consistency King", "description": "Study 5 days this week", "metric": "active_days_week", "target": 5, "xp": 350 }
+  ]
+}

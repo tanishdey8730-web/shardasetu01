@@ -1,0 +1,15 @@
+{
+  "entries": [
+    {
+      "userId": "c895cf87548167ba9817a664",
+      "examId": null,
+      "date": "2026-06-01",
+      "recordedAt": "2026-06-01T09:17:55.002Z",
+      "readinessScore": 0,
+      "successProbability": 0,
+      "level": "not_started",
+      "subjectScores": [],
+      "weakCount": 0
+    }
+  ]
+}

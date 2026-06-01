@@ -1,16 +1,27 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <script>
 (function(){var b="",h=location.hostname;if(/\.github\.io$/i.test(h)){var s=location.pathname.split("/").filter(Boolean)[0];if(s&&!/\.html$/i.test(s))b="/"+s+"/";}window.SHARDA_BASE=b;if(b){var e=document.createElement("base");e.href=b;document.head.appendChild(e);}})();
   </script>
-  <title>My Profile — Sharda Setu</title>
+  <title>Student Profile — Sharda Setu</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="ui-enhancements.css" />
   <link rel="stylesheet" href="profile.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <meta name="theme-color" content="#1a237e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Sharda Setu" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.svg" />
+  <link rel="stylesheet" href="pwa.css" />
 </head>
 <body>
   <header class="site-header">
@@ -19,14 +30,16 @@
         <img src="assets/logo.svg" alt="" class="logo-img" width="44" height="44"/>
         <div class="brand-text">
           <div class="brand-name">Sharda Setu</div>
-          <div class="brand-tagline">Accessible Learning</div>
+          <div class="brand-tagline">Student Profile</div>
         </div>
       </a>
       <nav>
         <a href="index.html">Home</a>
-        <a href="online-education.html">Online Education</a>
-        <a href="offline.html">Offline Library</a>
-        <a href="profile.html" class="nav-edu">My Profile</a>
+        <a href="student-dashboard.html">Dashboard</a>
+        <a href="mock-tests.html">Mock Tests</a>
+        <a href="online-education.html">Education</a>
+        <a href="file-manager.html">Files</a>
+        <a href="profile.html" class="nav-edu">Profile</a>
       </nav>
       <div class="auth" id="auth-slot"></div>
     </div>
@@ -36,7 +49,7 @@
     <div class="container">
       <div id="profile-guest" class="profile-guest" hidden>
         <h1>Sign in to view your profile</h1>
-        <p>Create a free account to track your exam goals and learning progress.</p>
+        <p>Track tests, certificates, saved courses, achievements, and progress.</p>
         <div class="profile-guest-actions">
           <a class="btn btn-cta" href="login.html">Sign In</a>
           <a class="btn btn-outline" href="signup.html">Create Account</a>
@@ -47,91 +60,168 @@
         <div class="profile-hero">
           <div class="profile-hero-bg" aria-hidden="true"></div>
           <div class="profile-hero-content">
-            <img id="profile-avatar-lg" class="profile-avatar-lg" src="" alt="Profile photo" width="100" height="100"/>
-            <div>
+            <div class="profile-avatar-wrap">
+              <img id="profile-avatar-lg" class="profile-avatar-lg" src="" alt="Profile photo" width="100" height="100"/>
+              <label class="profile-avatar-upload" title="Upload photo">
+                <input type="file" id="pf-avatar-file" accept="image/jpeg,image/png,image/webp,image/gif" hidden />
+                📷
+              </label>
+            </div>
+            <div class="profile-hero-text">
               <h1 id="profile-display-name">—</h1>
               <p id="profile-display-email">—</p>
-              <span id="profile-display-role" class="role-badge">Student</span>
+              <div class="profile-hero-meta">
+                <span id="profile-display-role" class="role-badge">Student</span>
+                <span id="profile-level-badge" class="pf-level-badge" hidden></span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="profile-grid">
-          <form id="profile-form" class="profile-card">
-            <h2>Edit Profile</h2>
-            <p class="card-lead">Update your details and exam preparation goal.</p>
+        <div class="pf-stats-row" id="pf-stats-row"></div>
 
-            <label for="pf-name">Full Name</label>
-            <input type="text" id="pf-name" required />
+        <nav class="pf-tabs" id="pf-tabs" role="tablist">
+          <button type="button" class="pf-tab active" data-tab="overview">Overview</button>
+          <button type="button" class="pf-tab" data-tab="edit">Edit Profile</button>
+          <button type="button" class="pf-tab" data-tab="tests">Test History</button>
+          <button type="button" class="pf-tab" data-tab="certificates">Certificates</button>
+          <button type="button" class="pf-tab" data-tab="courses">Saved Courses</button>
+          <button type="button" class="pf-tab" data-tab="achievements">Achievements</button>
+          <button type="button" class="pf-tab" data-tab="report">Progress Report</button>
+        </nav>
 
-            <label for="pf-email">Email</label>
-            <input type="email" id="pf-email" disabled />
-
-            <label for="pf-role">I am a</label>
-            <select id="pf-role">
-              <option value="student">Student</option>
-              <option value="teacher">Teacher</option>
-            </select>
-
-            <label for="pf-exam">Target Exam</label>
-            <select id="pf-exam">
-              <option value="">Select your goal</option>
-              <optgroup label="Government Exams">
-                <option value="ssc-cgl">SSC CGL</option>
-                <option value="ssc-chsl">SSC CHSL</option>
-                <option value="ssc-mts">SSC MTS</option>
-                <option value="ssc-gd">SSC GD</option>
-                <option value="cds">CDS</option>
-                <option value="afcat">AFCAT</option>
-                <option value="nda">NDA</option>
-                <option value="capf">CAPF AC</option>
-                <option value="rrb-ntpc">RRB NTPC</option>
-              </optgroup>
-              <optgroup label="IT &amp; Placement Prep">
-                <option value="dsa">DSA &amp; Coding</option>
-                <option value="python">Python</option>
-                <option value="fullstack">Full Stack Development</option>
-                <option value="aptitude">Aptitude</option>
-                <option value="hr-interview">HR Interview</option>
-                <option value="tcs-nqt">TCS NQT</option>
-                <option value="infosys">Infosys</option>
-                <option value="wipro-nth">Wipro NTH</option>
-                <option value="accenture">Accenture</option>
-                <option value="java-placements">Java for Placements</option>
-              </optgroup>
-            </select>
-
-            <label for="pf-city">City</label>
-            <input type="text" id="pf-city" placeholder="e.g. Kolkata" />
-
-            <label for="pf-phone">Phone</label>
-            <input type="tel" id="pf-phone" placeholder="+91 XXXXX XXXXX" />
-
-            <label for="pf-bio">Bio</label>
-            <textarea id="pf-bio" rows="3" placeholder="Tell us about your learning goals…"></textarea>
-
-            <p id="profile-msg" class="profile-msg" role="status"></p>
-            <button type="submit" class="btn btn-cta">Save Profile</button>
-          </form>
-
-          <aside class="profile-sidebar">
-            <div class="profile-card quick-links">
-              <h3>Quick Links</h3>
-              <a href="online-education.html?track=it">IT &amp; Placement Prep</a>
-              <a id="profile-exam-link" href="online-education.html">My Target Exam</a>
-              <a href="offline.html">Offline Library</a>
-              <a href="learn-game.html">Quiz</a>
-              <a href="features.html">Platform Features</a>
+        <div class="pf-panels">
+          <section class="pf-panel active" id="panel-overview" data-panel="overview">
+            <div class="pf-grid-2">
+              <div class="profile-card">
+                <h2>Recent tests</h2>
+                <div id="pf-overview-tests" class="pf-list"></div>
+              </div>
+              <div class="profile-card">
+                <h2>Latest achievements</h2>
+                <div id="pf-overview-achievements" class="pf-ach-grid"></div>
+              </div>
             </div>
-            <div class="profile-card stats-card">
-              <h3>Your Learning Hub</h3>
-              <ul>
-                <li><strong>20</strong> Exam &amp; IT Tracks</li>
-                <li><strong>9</strong> Quiz Subjects</li>
-                <li><strong>Hindi + English</strong> Playlists</li>
-              </ul>
+          </section>
+
+          <section class="pf-panel" id="panel-edit" data-panel="edit" hidden>
+            <form id="profile-form" class="profile-card pf-edit-card">
+              <h2>Edit Profile</h2>
+              <p class="card-lead">Update your details and exam preparation goal.</p>
+
+              <label for="pf-name">Full Name</label>
+              <input type="text" id="pf-name" required />
+
+              <label for="pf-email">Email</label>
+              <input type="email" id="pf-email" disabled />
+
+              <label for="pf-role">I am a</label>
+              <select id="pf-role">
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+              </select>
+
+              <label for="pf-exam">Target Exam</label>
+              <select id="pf-exam">
+                <option value="">Select your goal</option>
+                <optgroup label="Government Exams">
+                  <option value="ssc-cgl">SSC CGL</option>
+                  <option value="ssc-chsl">SSC CHSL</option>
+                  <option value="ssc-mts">SSC MTS</option>
+                  <option value="ssc-gd">SSC GD</option>
+                  <option value="cds">CDS</option>
+                  <option value="afcat">AFCAT</option>
+                  <option value="nda">NDA</option>
+                  <option value="capf">CAPF AC</option>
+                  <option value="rrb-ntpc">RRB NTPC</option>
+                </optgroup>
+                <optgroup label="IT &amp; Placement Prep">
+                  <option value="dsa">DSA &amp; Coding</option>
+                  <option value="python">Python</option>
+                  <option value="fullstack">Full Stack Development</option>
+                  <option value="aptitude">Aptitude</option>
+                  <option value="hr-interview">HR Interview</option>
+                  <option value="tcs-nqt">TCS NQT</option>
+                </optgroup>
+              </select>
+
+              <label for="pf-city">City</label>
+              <input type="text" id="pf-city" placeholder="e.g. Kolkata" />
+
+              <label for="pf-phone">Phone</label>
+              <input type="tel" id="pf-phone" placeholder="+91 XXXXX XXXXX" />
+
+              <label for="pf-bio">Bio</label>
+              <textarea id="pf-bio" rows="3" placeholder="Tell us about your learning goals…"></textarea>
+
+              <p id="profile-msg" class="profile-msg" role="status"></p>
+              <button type="submit" class="btn btn-cta">Save Profile</button>
+            </form>
+          </section>
+
+          <section class="pf-panel" id="panel-tests" data-panel="tests" hidden>
+            <div class="profile-card">
+              <h2>Test History</h2>
+              <p class="card-lead" id="pf-test-summary"></p>
+              <h3 class="pf-subhead">Mock &amp; chapter tests</h3>
+              <div id="pf-mock-tests" class="pf-list"></div>
+              <h3 class="pf-subhead">Quiz scores</h3>
+              <div id="pf-quiz-tests" class="pf-list"></div>
             </div>
-          </aside>
+          </section>
+
+          <section class="pf-panel" id="panel-certificates" data-panel="certificates" hidden>
+            <div class="profile-card">
+              <h2>Certificates</h2>
+              <p class="card-lead">Earned from mock tests, quizzes, levels, and badges.</p>
+              <div id="pf-certificates" class="pf-cert-grid"></div>
+            </div>
+          </section>
+
+          <section class="pf-panel" id="panel-courses" data-panel="courses" hidden>
+            <div class="profile-card">
+              <h2>Saved Courses</h2>
+              <p class="card-lead">Bookmark playlists from <a href="online-education.html">Online Education</a>.</p>
+              <form id="pf-save-course-form" class="pf-save-form">
+                <input type="text" id="pf-course-id" placeholder="Course ID (e.g. ssc-cgl)" required />
+                <input type="text" id="pf-course-title" placeholder="Course title" required />
+                <input type="url" id="pf-course-url" placeholder="Link (optional)" />
+                <button type="submit" class="btn btn-cta">Save course</button>
+              </form>
+              <div id="pf-saved-courses" class="pf-course-grid"></div>
+            </div>
+          </section>
+
+          <section class="pf-panel" id="panel-achievements" data-panel="achievements" hidden>
+            <div class="profile-card">
+              <h2>Achievements &amp; Badges</h2>
+              <div id="pf-achievements" class="pf-ach-grid"></div>
+            </div>
+          </section>
+
+          <section class="pf-panel" id="panel-report" data-panel="report" hidden>
+            <div class="profile-card">
+              <h2>Progress Report</h2>
+              <p class="card-lead" id="pf-report-date"></p>
+              <div class="pf-report-stats" id="pf-report-stats"></div>
+              <div class="pf-chart-wrap">
+                <canvas id="pf-score-chart" height="120"></canvas>
+              </div>
+              <div class="pf-grid-2" style="margin-top:20px">
+                <div>
+                  <h3 class="pf-subhead">Weak topics</h3>
+                  <ul id="pf-weak-topics" class="pf-topic-list"></ul>
+                </div>
+                <div>
+                  <h3 class="pf-subhead">Strong topics</h3>
+                  <ul id="pf-strong-topics" class="pf-topic-list"></ul>
+                </div>
+              </div>
+              <h3 class="pf-subhead">Recommendations</h3>
+              <ul id="pf-recommendations" class="pf-topic-list"></ul>
+              <button type="button" class="btn btn-outline" id="pf-print-report" style="margin-top:16px">Print report</button>
+            </div>
+          </section>
         </div>
       </div>
     </div>
@@ -146,5 +236,6 @@
 
   <script src="auth.js"></script>
   <script src="profile.js"></script>
+  <script src="pwa.js" defer></script>
 </body>
 </html>

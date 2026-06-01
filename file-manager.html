@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script>
+(function(){var b="",h=location.hostname;if(/\.github\.io$/i.test(h)){var s=location.pathname.split("/").filter(Boolean)[0];if(s&&!/\.html$/i.test(s))b="/"+s+"/";}window.SHARDA_BASE=b;if(b){var e=document.createElement("base");e.href=b;document.head.appendChild(e);}})();
+  </script>
+  <title>Cloud File Manager — Sharda Setu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="ui-enhancements.css" />
+  <link rel="stylesheet" href="file-manager.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+
+  <meta name="theme-color" content="#1a237e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Sharda Setu" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.svg" />
+  <link rel="stylesheet" href="pwa.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-link">
+        <img src="assets/logo.svg" alt="" class="logo-img" width="44" height="44"/>
+        <div class="brand-text">
+          <div class="brand-name">Sharda Setu</div>
+          <div class="brand-tagline">Cloud Storage</div>
+        </div>
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="file-manager.html" class="nav-edu">Files</a>
+        <a href="admin-dashboard.html" id="fm-admin-link" hidden>Admin</a>
+      </nav>
+      <div class="auth" id="auth-slot"></div>
+    </div>
+  </header>
+
+  <main class="fm-page">
+    <section class="fm-hero">
+      <h1>Cloud File Manager</h1>
+      <p>Secure Cloudinary storage for images, PDFs, and certificates — signed URLs, authenticated access.</p>
+    </section>
+
+    <div class="fm-container">
+      <div id="fm-config-warn" class="fm-warn" hidden></div>
+
+      <div id="fm-guest" class="fm-guest" hidden>
+        <h2>Sign in to manage files</h2>
+        <a href="login.html?next=file-manager.html" class="btn btn-cta">Sign In</a>
+      </div>
+
+      <div id="fm-app" hidden>
+        <div class="fm-toolbar">
+          <div class="fm-filters">
+            <label>
+              Category
+              <select id="fm-filter-category">
+                <option value="">All</option>
+                <option value="image">Images</option>
+                <option value="pdf">PDFs</option>
+                <option value="certificate">Certificates</option>
+              </select>
+            </label>
+            <label id="fm-admin-user-wrap" hidden>
+              User ID (admin)
+              <input type="text" id="fm-filter-user" placeholder="Filter by user ID" />
+            </label>
+            <label class="fm-check" id="fm-admin-all-wrap" hidden>
+              <input type="checkbox" id="fm-filter-all" /> Show all users
+            </label>
+          </div>
+          <button type="button" class="btn btn-outline" id="fm-refresh">Refresh</button>
+        </div>
+
+        <div class="fm-upload-grid">
+          <div class="fm-card fm-upload-card">
+            <h3>Upload image</h3>
+            <p>JPEG, PNG, WebP, GIF — max 5MB</p>
+            <input type="file" id="fm-up-image" accept="image/*" />
+            <input type="text" id="fm-title-image" placeholder="Title (optional)" class="fm-title-input" />
+            <button type="button" class="btn btn-cta fm-upload-btn" data-category="image">Upload image</button>
+          </div>
+          <div class="fm-card fm-upload-card">
+            <h3>Upload PDF</h3>
+            <p>Study notes, documents — max 12MB</p>
+            <input type="file" id="fm-up-pdf" accept="application/pdf,.pdf" />
+            <input type="text" id="fm-title-pdf" placeholder="Title (optional)" class="fm-title-input" />
+            <button type="button" class="btn btn-cta fm-upload-btn" data-category="pdf">Upload PDF</button>
+          </div>
+          <div class="fm-card fm-upload-card">
+            <h3>Upload certificate</h3>
+            <p>PDF or image — max 10MB</p>
+            <input type="file" id="fm-up-cert" accept="application/pdf,image/*" />
+            <input type="text" id="fm-title-cert" placeholder="Title (optional)" class="fm-title-input" />
+            <button type="button" class="btn btn-cta fm-upload-btn" data-category="certificate">Upload certificate</button>
+          </div>
+        </div>
+
+        <div class="fm-stats" id="fm-stats"></div>
+
+        <div class="fm-card">
+          <h3>Your files</h3>
+          <div id="fm-files" class="fm-file-list"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <hr />
+      <p>© 2024 Sharda Setu — Cloudinary secure storage</p>
+    </div>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="file-manager.js"></script>
+  <script src="pwa.js" defer></script>
+</body>
+</html>

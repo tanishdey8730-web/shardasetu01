@@ -1,0 +1,213 @@
+{
+  "exams": {
+    "ssc": {
+      "name": "SSC (General)",
+      "icon": "📋",
+      "subjects": [
+        {
+          "id": "quant",
+          "name": "Quantitative Aptitude",
+          "topics": [
+            { "id": "ssc-q-ns", "title": "Number System & Simplification", "hours": 10 },
+            { "id": "ssc-q-pct", "title": "Percentage, Ratio & Proportion", "hours": 12 },
+            { "id": "ssc-q-si", "title": "Simple & Compound Interest", "hours": 8 },
+            { "id": "ssc-q-taw", "title": "Time, Work & Pipes", "hours": 10 },
+            { "id": "ssc-q-tsd", "title": "Time, Speed & Distance", "hours": 10 },
+            { "id": "ssc-q-alg", "title": "Algebra & Linear Equations", "hours": 10 },
+            { "id": "ssc-q-geo", "title": "Geometry & Mensuration", "hours": 14 },
+            { "id": "ssc-q-trig", "title": "Trigonometry Basics", "hours": 8 }
+          ]
+        },
+        {
+          "id": "reasoning",
+          "name": "Reasoning",
+          "topics": [
+            { "id": "ssc-r-analogy", "title": "Analogy & Classification", "hours": 6 },
+            { "id": "ssc-r-series", "title": "Series & Coding-Decoding", "hours": 8 },
+            { "id": "ssc-r-blood", "title": "Blood Relations & Direction", "hours": 8 },
+            { "id": "ssc-r-syll", "title": "Syllogism & Venn Diagrams", "hours": 8 },
+            { "id": "ssc-r-puzzle", "title": "Seating & Puzzle (Linear/Circular)", "hours": 12 }
+          ]
+        },
+        {
+          "id": "gs",
+          "name": "General Awareness",
+          "topics": [
+            { "id": "ssc-gs-pol", "title": "Indian Polity & Constitution", "hours": 10 },
+            { "id": "ssc-gs-hist", "title": "Modern History & Freedom Movement", "hours": 10 },
+            { "id": "ssc-gs-geo", "title": "Indian Geography", "hours": 8 },
+            { "id": "ssc-gs-eco", "title": "Economy & Budget Basics", "hours": 8 },
+            { "id": "ssc-gs-ca", "title": "Current Affairs (Last 6 months)", "hours": 12 }
+          ]
+        },
+        {
+          "id": "english",
+          "name": "English",
+          "topics": [
+            { "id": "ssc-en-gram", "title": "Grammar: Tenses, Articles, Voice", "hours": 10 },
+            { "id": "ssc-en-vocab", "title": "Vocabulary & One-word Substitution", "hours": 8 },
+            { "id": "ssc-en-rc", "title": "Reading Comprehension", "hours": 10 },
+            { "id": "ssc-en-error", "title": "Error Spotting & Cloze Test", "hours": 10 }
+          ]
+        }
+      ]
+    },
+    "ssc-cgl": {
+      "name": "SSC CGL",
+      "icon": "📐",
+      "inherits": "ssc",
+      "extraSubjects": [
+        {
+          "id": "tier2",
+          "name": "Tier-2 Quant (Advanced)",
+          "topics": [
+            { "id": "cgl-t2-alg", "title": "Advanced Algebra & Number Theory", "hours": 12 },
+            { "id": "cgl-t2-geo", "title": "Advanced Geometry & Co-ordinate", "hours": 14 },
+            { "id": "cgl-t2-trig", "title": "Trigonometry & Heights-Distances", "hours": 10 }
+          ]
+        }
+      ]
+    },
+    "nda": {
+      "name": "NDA",
+      "icon": "🎖️",
+      "subjects": [
+        {
+          "id": "maths",
+          "name": "Mathematics",
+          "topics": [
+            { "id": "nda-m-alg", "title": "Algebra & Quadratic Equations", "hours": 12 },
+            { "id": "nda-m-trig", "title": "Trigonometry (Identities & Equations)", "hours": 14 },
+            { "id": "nda-m-calc", "title": "Calculus: Limits & Derivatives Intro", "hours": 10 },
+            { "id": "nda-m-vec", "title": "Vectors & 3D Geometry Basics", "hours": 10 },
+            { "id": "nda-m-stat", "title": "Statistics & Probability", "hours": 8 },
+            { "id": "nda-m-mat", "title": "Matrices & Determinants", "hours": 8 }
+          ]
+        },
+        {
+          "id": "gmat",
+          "name": "GAT — General Ability",
+          "topics": [
+            { "id": "nda-g-eng", "title": "English: Grammar, Vocab, RC", "hours": 12 },
+            { "id": "nda-g-phy", "title": "Physics: Mechanics & Properties", "hours": 14 },
+            { "id": "nda-g-chem", "title": "Chemistry: Physical & Inorganic Basics", "hours": 12 },
+            { "id": "nda-g-ssb", "title": "SSB Orientation & Current Affairs", "hours": 8 }
+          ]
+        }
+      ]
+    },
+    "cds": {
+      "name": "CDS",
+      "icon": "⚔️",
+      "subjects": [
+        {
+          "id": "english",
+          "name": "English",
+          "topics": [
+            { "id": "cds-en-gram", "title": "Grammar & Sentence Improvement", "hours": 10 },
+            { "id": "cds-en-vocab", "title": "Vocabulary & Idioms", "hours": 8 },
+            { "id": "cds-en-rc", "title": "Reading Comprehension & Para Jumbles", "hours": 10 }
+          ]
+        },
+        {
+          "id": "gk",
+          "name": "General Knowledge",
+          "topics": [
+            { "id": "cds-gk-hist", "title": "History & Culture", "hours": 10 },
+            { "id": "cds-gk-geo", "title": "Geography & Environment", "hours": 8 },
+            { "id": "cds-gk-pol", "title": "Polity & Defence Awareness", "hours": 10 },
+            { "id": "cds-gk-sci", "title": "Science & Technology Current", "hours": 8 }
+          ]
+        },
+        {
+          "id": "maths",
+          "name": "Elementary Mathematics",
+          "topics": [
+            { "id": "cds-m-arith", "title": "Arithmetic & Number System", "hours": 12 },
+            { "id": "cds-m-alg", "title": "Algebra & Trigonometry", "hours": 12 },
+            { "id": "cds-m-geo", "title": "Geometry, Mensuration & Stats", "hours": 14 }
+          ]
+        }
+      ]
+    },
+    "afcat": {
+      "name": "AFCAT",
+      "icon": "✈️",
+      "subjects": [
+        {
+          "id": "verbal",
+          "name": "Verbal Ability",
+          "topics": [
+            { "id": "af-v-syn", "title": "Synonyms, Antonyms & Vocabulary", "hours": 8 },
+            { "id": "af-v-rc", "title": "Reading Comprehension", "hours": 10 },
+            { "id": "af-v-cloze", "title": "Cloze Test & Error Detection", "hours": 8 }
+          ]
+        },
+        {
+          "id": "reasoning",
+          "name": "Reasoning & Military Aptitude",
+          "topics": [
+            { "id": "af-r-series", "title": "Series & Coding", "hours": 8 },
+            { "id": "af-r-spatial", "title": "Spatial & Diagram Reasoning", "hours": 10 },
+            { "id": "af-r-mil", "title": "Military Aptitude & Situational Judgement", "hours": 8 }
+          ]
+        },
+        {
+          "id": "quant",
+          "name": "Numerical Ability",
+          "topics": [
+            { "id": "af-q-arith", "title": "Arithmetic & Percentage", "hours": 10 },
+            { "id": "af-q-alg", "title": "Algebra & Ratio-Proportion", "hours": 8 },
+            { "id": "af-q-tsd", "title": "Time-Speed-Distance & Work", "hours": 10 }
+          ]
+        },
+        {
+          "id": "gk",
+          "name": "General Awareness",
+          "topics": [
+            { "id": "af-gk-hist", "title": "History & Polity", "hours": 8 },
+            { "id": "af-gk-def", "title": "Defence & Current Affairs", "hours": 10 },
+            { "id": "af-gk-sci", "title": "Science & Geography", "hours": 8 }
+          ]
+        }
+      ]
+    },
+    "rrb-ntpc": {
+      "name": "RRB NTPC",
+      "icon": "🚂",
+      "subjects": [
+        {
+          "id": "maths",
+          "name": "Mathematics",
+          "topics": [
+            { "id": "rrb-m-ns", "title": "Number System & BODMAS", "hours": 8 },
+            { "id": "rrb-m-pct", "title": "Percentage, Profit-Loss & SI/CI", "hours": 12 },
+            { "id": "rrb-m-taw", "title": "Time, Work & Pipes", "hours": 8 },
+            { "id": "rrb-m-tsd", "title": "Time, Speed & Distance", "hours": 10 },
+            { "id": "rrb-m-geo", "title": "Geometry & Mensuration", "hours": 10 }
+          ]
+        },
+        {
+          "id": "reasoning",
+          "name": "General Intelligence & Reasoning",
+          "topics": [
+            { "id": "rrb-r-analogy", "title": "Analogy & Odd One Out", "hours": 6 },
+            { "id": "rrb-r-series", "title": "Series & Coding-Decoding", "hours": 8 },
+            { "id": "rrb-r-puzzle", "title": "Puzzles & Seating Arrangement", "hours": 12 },
+            { "id": "rrb-r-nonverbal", "title": "Non-verbal & Mirror Images", "hours": 8 }
+          ]
+        },
+        {
+          "id": "gs",
+          "name": "General Awareness",
+          "topics": [
+            { "id": "rrb-gs-rail", "title": "Railway & Transport Awareness", "hours": 8 },
+            { "id": "rrb-gs-hist", "title": "History & Polity", "hours": 10 },
+            { "id": "rrb-gs-sci", "title": "Physics, Chemistry & Biology Basics", "hours": 12 },
+            { "id": "rrb-gs-ca", "title": "Current Affairs", "hours": 10 }
+          ]
+        }
+      ]
+    }
+  }
+}

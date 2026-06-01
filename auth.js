@@ -17,6 +17,10 @@ function getToken() {
   return getAuth()?.token || null;
 }
 
+function getRefreshToken() {
+  return getAuth()?.refreshToken || null;
+}
+
 function getUser() {
   return getAuth()?.user || null;
 }
@@ -25,13 +29,64 @@ function isLoggedIn() {
   return Boolean(getToken());
 }
 
-async function apiFetch(url, options = {}) {
+let refreshPromise = null;
+
+async function refreshSession() {
+  const refreshToken = getRefreshToken();
+  if (!refreshToken) throw new Error("Session expired");
+
+  if (!refreshPromise) {
+    refreshPromise = fetch("/api/auth/refresh", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ refreshToken })
+    })
+      .then(async (res) => {
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data.error || "Session expired");
+        const prev = getAuth() || {};
+        setAuth({
+          user: data.user,
+          token: data.token,
+          refreshToken: data.refreshToken
+        });
+        return data;
+      })
+      .finally(() => {
+        refreshPromise = null;
+      });
+  }
+  return refreshPromise;
+}
+
+async function apiFetch(url, options = {}, retry = true) {
   const token = getToken();
   const headers = { "Content-Type": "application/json", ...(options.headers || {}) };
   if (token) headers.Authorization = `Bearer ${token}`;
-  const res = await fetch(url, { ...options, headers });
-  const data = await res.json().catch(() => ({}));
+
+  let res = await fetch(url, { ...options, headers });
+  let data = await res.json().catch(() => ({}));
+
+  if (res.status === 401 && retry && getRefreshToken()) {
+    try {
+      await refreshSession();
+      return apiFetch(url, options, false);
+    } catch (_) {
+      setAuth(null);
+      throw new Error(data.error || "Session expired. Please sign in again.");
+    }
+  }
+
   if (!res.ok) throw new Error(data.error || "Request failed");
+  return data;
+}
+
+function saveAuthResponse(data) {
+  setAuth({
+    user: data.user,
+    token: data.token,
+    refreshToken: data.refreshToken || getRefreshToken()
+  });
   return data;
 }
 
@@ -40,8 +95,7 @@ async function register(payload) {
     method: "POST",
     body: JSON.stringify(payload)
   });
-  setAuth(data);
-  return data;
+  return saveAuthResponse(data);
 }
 
 async function login(payload) {
@@ -49,16 +103,91 @@ async function login(payload) {
     method: "POST",
     body: JSON.stringify(payload)
   });
-  setAuth(data);
-  return data;
+  return saveAuthResponse(data);
 }
 
 async function logout() {
+  const token = getToken();
+  const refreshToken = getRefreshToken();
   try {
-    await apiFetch("/api/auth/logout", { method: "POST" });
+    await fetch("/api/auth/logout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        ...(token ? { Authorization: `Bearer ${token}` } : {})
+      },
+      body: JSON.stringify({ refreshToken })
+    });
   } catch (_) {}
   setAuth(null);
   window.location.href = "index.html";
+}
+
+async function forgotPassword(email) {
+  const res = await fetch("/api/auth/forgot-password", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email })
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(data.error || "Request failed");
+  return data;
+}
+
+async function resetPassword(token, password) {
+  const res = await fetch("/api/auth/reset-password", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ token, password })
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(data.error || "Reset failed");
+  return data;
+}
+
+async function verifyEmail(token) {
+  const res = await fetch(`/api/auth/verify-email?token=${encodeURIComponent(token)}`);
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(data.error || "Verification failed");
+  const auth = getAuth();
+  if (auth && data.user) {
+    auth.user = data.user;
+    setAuth(auth);
+  }
+  return data;
+}
+
+async function resendVerification(email) {
+  const res = await fetch("/api/auth/resend-verification", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email })
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(data.error || "Request failed");
+  return data;
+}
+
+function loginWithGoogle() {
+  window.location.href = "/api/auth/google";
+}
+
+function handleOAuthCallback() {
+  const hash = window.location.hash.replace(/^#/, "");
+  const params = new URLSearchParams(hash);
+  const token = params.get("token");
+  const refreshToken = params.get("refreshToken");
+  const err = new URLSearchParams(window.location.search).get("error");
+
+  if (err) throw new Error(err);
+  if (!token) throw new Error("Missing authentication token");
+
+  setAuth({
+    user: null,
+    token,
+    refreshToken
+  });
+  return fetchProfile();
 }
 
 async function fetchProfile() {
@@ -89,11 +218,13 @@ function renderHeaderAuth(container) {
   const user = getUser();
 
   if (user) {
+    const unverified = user.emailVerified === false;
     container.innerHTML = `
       <div class="profile-menu">
         <button type="button" class="profile-trigger" id="profile-trigger" aria-expanded="false">
           <img class="profile-avatar" src="${escapeAttr(user.avatar)}" alt="${escapeAttr(user.name)}" width="36" height="36"/>
           <span class="profile-name">${escapeHtml(user.name.split(" ")[0])}</span>
+          ${unverified ? '<span class="auth-dot-unverified" title="Email not verified"></span>' : ""}
           <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path fill="currentColor" d="M2 4l4 4 4-4"/></svg>
         </button>
         <div class="profile-dropdown" id="profile-dropdown" hidden>
@@ -102,12 +233,21 @@ function renderHeaderAuth(container) {
             <div>
               <strong>${escapeHtml(user.name)}</strong>
               <span>${escapeHtml(user.email)}</span>
-              <span class="role-badge">${user.role === "teacher" ? "Teacher" : "Student"}</span>
+              <span class="role-badge">${roleLabel(user.role)}</span>
+          ${user.role === "teacher" || user.role === "admin" ? '<a href="teacher-dashboard.html">Teacher Dashboard</a>' : ""}
             </div>
           </div>
+          ${unverified ? '<a href="verify-email.html" class="verify-banner-link">⚠ Verify your email</a>' : ""}
           <a href="profile.html">My Profile</a>
           <a href="online-education.html">My Courses</a>
           <a href="offline.html">Offline Library</a>
+          <a href="study-assistant.html">Study Assistant</a>
+          <a href="learning-roadmap.html">My Roadmap</a>
+          <a href="mock-tests.html">Mock Tests</a>
+          <a href="performance-analytics.html">Analytics</a>
+          <a href="notes-generator.html">Notes</a>
+          <a href="student-dashboard.html">Dashboard</a>
+          ${user.role === "admin" ? '<a href="admin-dashboard.html">Admin</a>' : ""}
           <button type="button" id="logout-btn">Sign Out</button>
         </div>
       </div>`;
@@ -132,6 +272,12 @@ function renderHeaderAuth(container) {
   }
 }
 
+function roleLabel(role) {
+  if (role === "admin") return "Admin";
+  if (role === "teacher") return "Teacher";
+  return "Student";
+}
+
 function escapeHtml(s) {
   return String(s)
     .replace(/&/g, "&amp;")
@@ -150,12 +296,20 @@ function initHeader() {
 window.ShardaAuth = {
   getAuth,
   getToken,
+  getRefreshToken,
   getUser,
   isLoggedIn,
   apiFetch,
+  refreshSession,
   register,
   login,
   logout,
+  forgotPassword,
+  resetPassword,
+  verifyEmail,
+  resendVerification,
+  loginWithGoogle,
+  handleOAuthCallback,
   fetchProfile,
   updateProfile,
   renderHeaderAuth,

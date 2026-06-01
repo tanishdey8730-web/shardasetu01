@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script>
+(function(){var b="",h=location.hostname;if(/\.github\.io$/i.test(h)){var s=location.pathname.split("/").filter(Boolean)[0];if(s&&!/\.html$/i.test(s))b="/"+s+"/";}window.SHARDA_BASE=b;if(b){var e=document.createElement("base");e.href=b;document.head.appendChild(e);}})();
+  </script>
+  <title>Offline — Sharda Setu</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="pwa.css" />
+  <meta name="theme-color" content="#1a237e" />
+</head>
+<body>
+  <main class="pwa-offline-page">
+    <div class="pwa-offline-card">
+      <div class="pwa-offline-icon">📡</div>
+      <h1>You're offline</h1>
+      <p>Cached pages and study content may still be available. Reconnect to sync progress and live features.</p>
+      <div class="pwa-offline-actions">
+        <button type="button" class="btn btn-cta" onclick="location.reload()">Try again</button>
+        <a href="index.html" class="btn btn-outline">Home</a>
+        <a href="offline.html" class="btn btn-outline">Offline library</a>
+      </div>
+      <p class="pwa-sync-hint" id="pwa-queue-hint" hidden></p>
+    </div>
+  </main>
+  <script src="pwa.js"></script>
+</body>
+</html>

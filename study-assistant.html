@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script>
+(function(){var b="",h=location.hostname;if(/\.github\.io$/i.test(h)){var s=location.pathname.split("/").filter(Boolean)[0];if(s&&!/\.html$/i.test(s))b="/"+s+"/";}window.SHARDA_BASE=b;if(b){var e=document.createElement("base");e.href=b;document.head.appendChild(e);}})();
+  </script>
+  <title>Study Assistant — Sharda Setu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="ui-enhancements.css" />
+  <link rel="stylesheet" href="study-assistant.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.4/dist/purify.min.js"></script>
+
+  <meta name="theme-color" content="#1a237e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Sharda Setu" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.svg" />
+  <link rel="stylesheet" href="pwa.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-link">
+        <img src="assets/logo.svg" alt="Sharda Setu" class="logo-img" width="44" height="44"/>
+        <div class="brand-text">
+          <div class="brand-name">Sharda Setu</div>
+          <div class="brand-tagline">Accessible Learning</div>
+        </div>
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="online-education.html">Online Education</a>
+        <a href="offline.html">Offline Library</a>
+        <a href="learn-game.html">Quiz</a>
+        <a href="study-assistant.html" class="nav-edu">Study Assistant</a>
+      </nav>
+      <div class="auth" id="auth-slot"></div>
+    </div>
+  </header>
+
+  <main class="sa-page">
+    <section class="sa-hero container">
+      <h1>AI <span>Study Assistant</span></h1>
+      <p>Ask doubts for SSC, NDA, CDS, AFCAT, and RRB — get concepts, formulas, shortcuts, and step-by-step explanations.</p>
+    </section>
+
+    <div class="sa-status-banner" id="sa-status-banner" hidden></div>
+
+    <div class="sa-sidebar-backdrop" id="sa-backdrop" aria-hidden="true"></div>
+
+    <div class="sa-layout">
+      <aside class="sa-sidebar" id="sa-sidebar" aria-label="Chat history">
+        <div class="sa-sidebar-head">
+          <button type="button" class="btn-new-chat" id="sa-new-chat">+ New chat</button>
+          <div class="sa-exam-select">
+            <label for="sa-exam-focus">Exam focus</label>
+            <select id="sa-exam-focus" aria-label="Exam focus">
+              <option value="general">General</option>
+              <option value="ssc">SSC (CGL, CHSL, MTS, GD)</option>
+              <option value="nda">NDA</option>
+              <option value="cds">CDS</option>
+              <option value="afcat">AFCAT</option>
+              <option value="rrb">RRB / Railway</option>
+            </select>
+          </div>
+        </div>
+        <div class="sa-conv-list" id="sa-conv-list">
+          <p class="sa-conv-empty">No conversations yet</p>
+        </div>
+      </aside>
+
+      <section class="sa-main" aria-label="Chat">
+        <div class="sa-toolbar">
+          <button type="button" class="sa-icon-btn sa-mobile-toggle" id="sa-menu-btn" title="Chat history" aria-label="Open chat history">☰</button>
+          <span class="sa-toolbar-title" id="sa-chat-title">New conversation</span>
+          <div class="sa-toolbar-actions">
+            <button type="button" class="sa-icon-btn" id="sa-theme-btn" title="Toggle dark mode" aria-label="Toggle dark mode">🌙</button>
+            <button type="button" class="sa-icon-btn" id="sa-delete-btn" title="Delete conversation" aria-label="Delete conversation" hidden>🗑</button>
+          </div>
+        </div>
+
+        <div class="sa-messages" id="sa-messages" role="log" aria-live="polite">
+          <div class="sa-welcome" id="sa-welcome">
+            <h2>How can I help you prepare today?</h2>
+            <p>Pick an exam focus and ask anything — theory, PYQs, shortcuts, or syllabus strategy.</p>
+            <div class="sa-chips" id="sa-starter-chips">
+              <button type="button" class="sa-chip" data-prompt="Explain percentage tricks for SSC CGL Tier-1 with 3 solved examples.">SSC percentage shortcuts</button>
+              <button type="button" class="sa-chip" data-prompt="NDA Maths: important formulas for trigonometry with memory tips.">NDA trigonometry formulas</button>
+              <button type="button" class="sa-chip" data-prompt="CDS English: error spotting rules with common traps.">CDS error spotting</button>
+              <button type="button" class="sa-chip" data-prompt="RRB NTPC General Science: quick revision of Physics units and dimensions.">RRB Science revision</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="sa-typing" id="sa-typing" hidden>
+          <div class="sa-msg-avatar" aria-hidden="true">🎓</div>
+          <div class="sa-typing-dots" aria-label="Assistant is typing">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <form class="sa-composer" id="sa-form">
+          <div class="sa-composer-inner">
+            <button type="button" class="sa-icon-btn" id="sa-voice-btn" title="Voice input" aria-label="Voice input">🎤</button>
+            <textarea id="sa-input" rows="1" placeholder="Ask a doubt… (e.g. AFCAT Maths: time-speed-distance shortcut)" maxlength="4000" aria-label="Your message"></textarea>
+            <button type="submit" class="sa-send-btn" id="sa-send-btn" title="Send" aria-label="Send message">➤</button>
+          </div>
+          <p class="sa-composer-hint">Markdown supported in replies · Sign in to sync history across devices</p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-left">
+        <a href="index.html" class="brand-link">
+          <img src="assets/logo.svg" alt="" class="logo-img" width="36" height="36"/>
+          <div class="brand-text">
+            <div class="brand-name">Sharda Setu</div>
+            <div class="brand-tag">Making quality education accessible anywhere, anytime.</div>
+          </div>
+        </a>
+      </div>
+      <div class="footer-center">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="study-assistant.html">Study Assistant</a></li>
+          <li><a href="online-education.html">Online Education</a></li>
+          <li><a href="learn-game.html">Quiz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <hr />
+      <p>© 2024 Sharda Setu. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="study-assistant.js"></script>
+  <script src="pwa.js" defer></script>
+</body>
+</html>

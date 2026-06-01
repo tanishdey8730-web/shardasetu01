@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script>
+(function(){var b="",h=location.hostname;if(/\.github\.io$/i.test(h)){var s=location.pathname.split("/").filter(Boolean)[0];if(s&&!/\.html$/i.test(s))b="/"+s+"/";}window.SHARDA_BASE=b;if(b){var e=document.createElement("base");e.href=b;document.head.appendChild(e);}})();
+  </script>
+  <title>AI Notes Generator — Sharda Setu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="ui-enhancements.css" />
+  <link rel="stylesheet" href="notes-generator.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <meta name="theme-color" content="#1a237e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Sharda Setu" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.svg" />
+  <link rel="stylesheet" href="pwa.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-link">
+        <img src="assets/logo.svg" alt="" class="logo-img" width="44" height="44"/>
+        <div class="brand-text">
+          <div class="brand-name">Sharda Setu</div>
+          <div class="brand-tagline">AI Notes</div>
+        </div>
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="online-education.html">Education</a>
+        <a href="notes-generator.html" class="nav-edu">Notes Generator</a>
+        <a href="study-assistant.html">Study Assistant</a>
+      </nav>
+      <div class="auth" id="auth-slot"></div>
+    </div>
+  </header>
+
+  <main class="ng-page">
+    <section class="ng-hero">
+      <h1>AI Notes Generator</h1>
+      <p>Turn YouTube lessons and PDFs into structured notes — concepts, formulas, revision sheets — export as PDF or Word.</p>
+    </section>
+
+    <div class="ng-container">
+      <div id="ng-guest" class="ng-guest" hidden>
+        <h2>Sign in to generate notes</h2>
+        <p>AI note generation requires a free Sharda Setu account.</p>
+        <p style="margin-top:20px">
+          <a href="login.html" class="btn btn-cta">Sign In</a>
+        </p>
+      </div>
+
+      <div id="ng-app" hidden>
+        <div style="display:flex;justify-content:flex-end;margin-bottom:12px">
+          <button type="button" class="ng-btn-outline ng-btn" id="ng-theme-btn" style="width:auto">🌙</button>
+        </div>
+
+        <div class="ng-layout">
+          <aside class="ng-panel">
+            <h2>Create notes</h2>
+            <div class="ng-tabs">
+              <button type="button" class="ng-tab active" data-source="youtube">YouTube</button>
+              <button type="button" class="ng-tab" data-source="pdf">PDF</button>
+            </div>
+
+            <form id="ng-form">
+              <div id="ng-youtube-fields">
+                <div class="ng-field">
+                  <label for="ng-youtube-url">YouTube URL</label>
+                  <input type="url" id="ng-youtube-url" placeholder="https://www.youtube.com/watch?v=..." />
+                </div>
+              </div>
+
+              <div id="ng-pdf-fields" hidden>
+                <div class="ng-field">
+                  <label>Upload PDF (max 8 MB)</label>
+                  <div class="ng-upload-zone" id="ng-drop-zone">
+                    <input type="file" id="ng-pdf-file" accept="application/pdf,.pdf" />
+                    <p>📄 Drop PDF here or click to browse</p>
+                    <p id="ng-file-name" style="font-size:0.8rem;color:var(--ng-muted);margin-top:8px"></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ng-field">
+                <label for="ng-exam-focus">Exam focus</label>
+                <select id="ng-exam-focus">
+                  <option value="general">General</option>
+                  <option value="ssc">SSC</option>
+                  <option value="nda">NDA</option>
+                  <option value="cds">CDS</option>
+                  <option value="afcat">AFCAT</option>
+                  <option value="rrb">RRB</option>
+                </select>
+              </div>
+
+              <div class="ng-field">
+                <label for="ng-note-type">Note style</label>
+                <select id="ng-note-type">
+                  <option value="full">Full detailed notes</option>
+                  <option value="revision">Revision-focused</option>
+                </select>
+              </div>
+
+              <button type="submit" class="ng-btn" id="ng-generate-btn">✨ Generate notes</button>
+              <p class="ng-status" id="ng-ai-status" hidden></p>
+            </form>
+
+            <div class="ng-history" id="ng-history" hidden>
+              <h2 style="font-size:0.85rem;margin-bottom:8px">Recent notes</h2>
+              <div id="ng-history-list"></div>
+            </div>
+          </aside>
+
+          <div class="ng-panel ng-output" id="ng-output">
+            <div class="ng-output-empty" id="ng-empty">
+              <p>Your generated notes will appear here.</p>
+              <p style="font-size:0.88rem;margin-top:8px">Paste a YouTube link from Online Education or upload a study PDF.</p>
+            </div>
+            <div id="ng-loading" class="ng-loading" hidden>
+              <div class="ng-spinner"></div>
+              <p>AI is analyzing content and writing notes…</p>
+              <p style="font-size:0.85rem;color:var(--ng-muted)">This may take 30–60 seconds</p>
+            </div>
+            <div id="ng-result" hidden></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <hr />
+      <p>© 2024 Sharda Setu. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="notes-generator.js"></script>
+  <script src="pwa.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+{
+  "users": {
+    "u1": {
+      "xp": 15,
+      "xpThisWeek": 15,
+      "weekKey": "2026-W23",
+      "badges": [
+        "first_steps"
+      ],
+      "achievements": [],
+      "challengesCompleted": 0,
+      "stats": {
+        "quizzes": 0,
+        "mocks": 0,
+        "notes": 0,
+        "goldQuizzes": 0
+      },
+      "daily": {
+        "date": "2026-06-01",
+        "challenges": [
+          {
+            "id": "daily_study",
+            "title": "Study Session",
+            "description": "Log any study activity today",
+            "metric": "activity_today",
+            "target": 1,
+            "xp": 75
+          },
+          {
+            "id": "daily_score",
+            "title": "Score Hunter",
+            "description": "Score 70%+ on any test today",
+            "metric": "score_70_today",
+            "target": 1,
+            "xp": 120
+          }
+        ],
+        "claimed": [],
+        "progress": {}
+      },
+      "weekly": {
+        "week": "2026-W23",
+        "challenges": [
+          {
+            "id": "weekly_quiz_5",
+            "title": "Quiz Marathon",
+            "description": "Complete 5 quizzes this week",
+            "metric": "quiz_week",
+            "target": 5,
+            "xp": 300
+          },
+          {
+            "id": "weekly_mock_2",
+            "title": "Mock Double",
+            "description": "Complete 2 mock tests this week",
+            "metric": "mock_week",
+            "target": 2,
+            "xp": 300
+          }
+        ],
+        "claimed": [],
+        "progress": {}
+      },
+      "notifications": [
+        {
+          "id": "66b21c2d99fc17d0",
+          "type": "badge",
+          "message": "Badge unlocked: First Steps 👣",
+          "xp": 0,
+          "badgeId": "first_steps",
+          "achievementId": null,
+          "read": false,
+          "at": "2026-06-01T07:57:12.449Z"
+        },
+        {
+          "id": "ff219579ba4e8738",
+          "type": "xp",
+          "message": "+15 XP — Daily login bonus",
+          "xp": 15,
+          "badgeId": null,
+          "achievementId": null,
+          "read": false,
+          "at": "2026-06-01T07:57:12.449Z"
+        }
+      ],
+      "lastLoginDate": "2026-06-01",
+      "synced": true
+    },
+    "c895cf87548167ba9817a664": {
+      "xp": 15,
+      "xpThisWeek": 15,
+      "weekKey": "2026-W23",
+      "badges": [
+        "first_steps"
+      ],
+      "achievements": [],
+      "challengesCompleted": 0,
+      "stats": {
+        "quizzes": 0,
+        "mocks": 0,
+        "notes": 0,
+        "goldQuizzes": 0
+      },
+      "daily": {
+        "date": "2026-06-01",
+        "challenges": [
+          {
+            "id": "daily_quiz",
+            "title": "Quiz Champion",
+            "description": "Complete 1 quiz today",
+            "metric": "quiz_today",
+            "target": 1,
+            "xp": 100
+          },
+          {
+            "id": "daily_mock",
+            "title": "Mock Day",
+            "description": "Complete 1 mock test today",
+            "metric": "mock_today",
+            "target": 1,
+            "xp": 100
+          }
+        ],
+        "claimed": [],
+        "progress": {}
+      },
+      "weekly": {
+        "week": "2026-W23",
+        "challenges": [
+          {
+            "id": "weekly_xp",
+            "title": "XP Grinder",
+            "description": "Earn 400 XP this week",
+            "metric": "xp_week",
+            "target": 400,
+            "xp": 350
+          },
+          {
+            "id": "weekly_quiz_5",
+            "title": "Quiz Marathon",
+            "description": "Complete 5 quizzes this week",
+            "metric": "quiz_week",
+            "target": 5,
+            "xp": 300
+          }
+        ],
+        "claimed": [],
+        "progress": {}
+      },
+      "notifications": [
+        {
+          "id": "6ca406f8f358408c",
+          "type": "badge",
+          "message": "Badge unlocked: First Steps 👣",
+          "xp": 0,
+          "badgeId": "first_steps",
+          "achievementId": null,
+          "read": false,
+          "at": "2026-06-01T09:01:06.143Z"
+        },
+        {
+          "id": "108ddf71524005e7",
+          "type": "xp",
+          "message": "+15 XP — Daily login bonus",
+          "xp": 15,
+          "badgeId": null,
+          "achievementId": null,
+          "read": false,
+          "at": "2026-06-01T09:01:06.142Z"
+        }
+      ],
+      "lastLoginDate": "2026-06-01",
+      "synced": true
+    }
+  }
+}

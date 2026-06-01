@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script>
+(function(){var b="",h=location.hostname;if(/\.github\.io$/i.test(h)){var s=location.pathname.split("/").filter(Boolean)[0];if(s&&!/\.html$/i.test(s))b="/"+s+"/";}window.SHARDA_BASE=b;if(b){var e=document.createElement("base");e.href=b;document.head.appendChild(e);}})();
+  </script>
+  <title>AI Question Generator — Sharda Setu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="ui-enhancements.css" />
+  <link rel="stylesheet" href="question-generator.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+
+  <meta name="theme-color" content="#1a237e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Sharda Setu" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.svg" />
+  <link rel="stylesheet" href="pwa.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-link">
+        <img src="assets/logo.svg" alt="" class="logo-img" width="44" height="44"/>
+        <div class="brand-text">
+          <div class="brand-name">Sharda Setu</div>
+          <div class="brand-tagline">Question Generator</div>
+        </div>
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="mock-tests.html">Mock Tests</a>
+        <a href="question-generator.html" class="nav-edu">Questions</a>
+        <a href="study-assistant.html">Study Assistant</a>
+      </nav>
+      <div class="auth" id="auth-slot"></div>
+    </div>
+  </header>
+
+  <main class="qg-page">
+    <section class="qg-hero">
+      <h1>AI Question Generator</h1>
+      <p>Create MCQs, subjective questions, and PYQ-style items by topic — Easy, Medium, or Hard — with instant answer keys and explanations.</p>
+    </section>
+
+    <div class="qg-container">
+      <div id="qg-guest" class="qg-guest" hidden>
+        <h2>Sign in to generate questions</h2>
+        <p>AI question generation requires a free Sharda Setu account.</p>
+        <p style="margin-top:20px"><a href="login.html" class="btn btn-cta">Sign In</a></p>
+      </div>
+
+      <div id="qg-app" hidden>
+        <div class="qg-toolbar">
+          <button type="button" class="qg-btn-outline qg-btn" id="qg-theme-btn">🌙 Dark</button>
+        </div>
+
+        <div class="qg-layout">
+          <aside class="qg-panel">
+            <h2>Generate</h2>
+            <form id="qg-form">
+              <div class="qg-field">
+                <label for="qg-topic">Topic *</label>
+                <input type="text" id="qg-topic" placeholder="e.g. Percentage, Laws of Motion" required />
+              </div>
+
+              <div class="qg-field">
+                <label for="qg-exam">Exam</label>
+                <select id="qg-exam">
+                  <option value="general">General</option>
+                  <option value="ssc-cgl">SSC CGL</option>
+                  <option value="ssc">SSC</option>
+                  <option value="nda">NDA</option>
+                  <option value="cds">CDS</option>
+                  <option value="afcat">AFCAT</option>
+                  <option value="rrb-ntpc">RRB NTPC</option>
+                </select>
+              </div>
+
+              <div class="qg-field">
+                <label for="qg-subject">Subject (optional)</label>
+                <select id="qg-subject">
+                  <option value="">Any</option>
+                  <option value="quant">Quantitative Aptitude</option>
+                  <option value="reasoning">Reasoning</option>
+                  <option value="gs">General Studies</option>
+                  <option value="english">English</option>
+                  <option value="physics">Physics</option>
+                  <option value="chemistry">Chemistry</option>
+                  <option value="maths">Mathematics</option>
+                </select>
+              </div>
+
+              <div class="qg-field">
+                <label>Question type</label>
+                <div class="qg-type-row">
+                  <label class="qg-radio"><input type="radio" name="qg-type" value="mcq" checked /> MCQ</label>
+                  <label class="qg-radio"><input type="radio" name="qg-type" value="subjective" /> Subjective</label>
+                  <label class="qg-radio"><input type="radio" name="qg-type" value="pyq" /> PYQ style</label>
+                </div>
+              </div>
+
+              <div class="qg-field">
+                <label>Difficulty</label>
+                <div class="qg-diff-row">
+                  <label class="qg-pill"><input type="radio" name="qg-diff" value="easy" /> Easy</label>
+                  <label class="qg-pill active"><input type="radio" name="qg-diff" value="medium" checked /> Medium</label>
+                  <label class="qg-pill"><input type="radio" name="qg-diff" value="hard" /> Hard</label>
+                </div>
+              </div>
+
+              <div class="qg-field">
+                <label for="qg-count">Number of questions</label>
+                <input type="number" id="qg-count" min="1" max="20" value="5" />
+              </div>
+
+              <button type="submit" class="qg-btn qg-btn-primary" id="qg-generate-btn">✨ Generate questions</button>
+              <p class="qg-status" id="qg-ai-status" hidden></p>
+            </form>
+
+            <div class="qg-history" id="qg-history" hidden>
+              <h2 class="qg-history-title">Recent sets</h2>
+              <div id="qg-history-list"></div>
+            </div>
+          </aside>
+
+          <div class="qg-panel qg-output">
+            <div class="qg-output-head" id="qg-output-head" hidden>
+              <div>
+                <h2 id="qg-result-title">Questions</h2>
+                <p class="qg-meta" id="qg-result-meta"></p>
+              </div>
+              <div class="qg-actions">
+                <button type="button" class="qg-btn-outline qg-btn" id="qg-toggle-key">Show answer key</button>
+                <button type="button" class="qg-btn-outline qg-btn" id="qg-toggle-exp">Show explanations</button>
+              </div>
+            </div>
+
+            <div class="qg-output-empty" id="qg-empty">
+              <p>Generated questions appear here.</p>
+              <p class="qg-hint">Pick a topic from your roadmap or syllabus — e.g. “Trigonometry”, “Indian Polity”.</p>
+            </div>
+
+            <div id="qg-loading" class="qg-loading" hidden>
+              <div class="qg-spinner"></div>
+              <p>AI is writing exam-style questions…</p>
+              <p class="qg-hint">Usually 20–45 seconds</p>
+            </div>
+
+            <div id="qg-answer-key" class="qg-answer-key" hidden></div>
+            <div id="qg-questions"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <hr />
+      <p>© 2024 Sharda Setu. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="question-generator.js"></script>
+  <script src="pwa.js" defer></script>
+</body>
+</html>

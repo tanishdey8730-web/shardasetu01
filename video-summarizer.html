@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script>
+(function(){var b="",h=location.hostname;if(/\.github\.io$/i.test(h)){var s=location.pathname.split("/").filter(Boolean)[0];if(s&&!/\.html$/i.test(s))b="/"+s+"/";}window.SHARDA_BASE=b;if(b){var e=document.createElement("base");e.href=b;document.head.appendChild(e);}})();
+  </script>
+  <title>YouTube Video Summarizer — Sharda Setu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="ui-enhancements.css" />
+  <link rel="stylesheet" href="video-summarizer.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <meta name="theme-color" content="#1a237e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Sharda Setu" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.svg" />
+  <link rel="stylesheet" href="pwa.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-link">
+        <img src="assets/logo.svg" alt="" class="logo-img" width="44" height="44"/>
+        <div class="brand-text">
+          <div class="brand-name">Sharda Setu</div>
+          <div class="brand-tagline">Video Summarizer</div>
+        </div>
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="online-education.html">Education</a>
+        <a href="video-summarizer.html" class="nav-edu">Summarizer</a>
+        <a href="notes-generator.html">Notes</a>
+        <a href="study-assistant.html">Study Assistant</a>
+      </nav>
+      <div class="auth" id="auth-slot"></div>
+    </div>
+  </header>
+
+  <main class="vs-page">
+    <section class="vs-hero">
+      <h1>AI YouTube Video Summarizer</h1>
+      <p>Paste any lesson URL — get transcript-based summary, key concepts, formulas, practice MCQs, and revision notes. Export as PDF.</p>
+    </section>
+
+    <div class="vs-container">
+      <div id="vs-guest" class="vs-guest" hidden>
+        <h2>Sign in to summarize videos</h2>
+        <p>AI summarization requires a free Sharda Setu account.</p>
+        <p style="margin-top:20px">
+          <a href="login.html" class="btn btn-cta">Sign In</a>
+        </p>
+      </div>
+
+      <div id="vs-app" hidden>
+        <div class="vs-toolbar">
+          <button type="button" class="vs-btn-outline vs-btn" id="vs-theme-btn">🌙 Dark</button>
+        </div>
+
+        <div class="vs-layout">
+          <aside class="vs-panel">
+            <h2>Summarize video</h2>
+            <form id="vs-form">
+              <div class="vs-field">
+                <label for="vs-youtube-url">YouTube URL</label>
+                <input type="url" id="vs-youtube-url" placeholder="https://www.youtube.com/watch?v=..." required />
+              </div>
+
+              <div class="vs-field">
+                <label for="vs-exam-focus">Exam focus</label>
+                <select id="vs-exam-focus">
+                  <option value="general">General competitive exams</option>
+                  <option value="ssc">SSC</option>
+                  <option value="nda">NDA</option>
+                  <option value="cds">CDS</option>
+                  <option value="afcat">AFCAT</option>
+                  <option value="rrb">RRB</option>
+                </select>
+              </div>
+
+              <button type="submit" class="vs-btn vs-btn-primary" id="vs-summarize-btn">▶ Summarize video</button>
+              <p class="vs-status" id="vs-ai-status" hidden></p>
+            </form>
+
+            <div class="vs-history" id="vs-history" hidden>
+              <h2 class="vs-history-title">Recent summaries</h2>
+              <div id="vs-history-list"></div>
+            </div>
+          </aside>
+
+          <div class="vs-panel vs-output" id="vs-output">
+            <div class="vs-output-empty" id="vs-empty">
+              <p>Your AI summary will appear here.</p>
+              <p class="vs-hint">Use videos from <a href="online-education.html">Online Education</a> or any exam-prep channel with captions enabled.</p>
+            </div>
+            <div id="vs-loading" class="vs-loading" hidden>
+              <div class="vs-spinner"></div>
+              <p>Fetching transcript and generating summary…</p>
+              <p class="vs-hint">This may take 30–90 seconds</p>
+            </div>
+            <div id="vs-result" hidden></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <hr />
+      <p>© 2024 Sharda Setu. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="video-summarizer.js"></script>
+  <script src="pwa.js" defer></script>
+</body>
+</html>

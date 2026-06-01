@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script>
+(function(){var b="",h=location.hostname;if(/\.github\.io$/i.test(h)){var s=location.pathname.split("/").filter(Boolean)[0];if(s&&!/\.html$/i.test(s))b="/"+s+"/";}window.SHARDA_BASE=b;if(b){var e=document.createElement("base");e.href=b;document.head.appendChild(e);}})();
+  </script>
+  <title>Exam Readiness Score — Sharda Setu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="ui-enhancements.css" />
+  <link rel="stylesheet" href="exam-readiness.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <meta name="theme-color" content="#1a237e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Sharda Setu" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.svg" />
+  <link rel="stylesheet" href="pwa.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-link">
+        <img src="assets/logo.svg" alt="" class="logo-img" width="44" height="44"/>
+        <div class="brand-text">
+          <div class="brand-name">Sharda Setu</div>
+          <div class="brand-tagline">Exam Readiness</div>
+        </div>
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="mock-tests.html">Mock Tests</a>
+        <a href="rank-prediction.html">Rank AI</a>
+        <a href="exam-readiness.html" class="nav-edu">Readiness</a>
+        <a href="performance-analytics.html">Analytics</a>
+        <a href="analytics-dashboard.html">Analytics+</a>
+      </nav>
+      <div class="auth" id="auth-slot"></div>
+    </div>
+  </header>
+
+  <main class="er-page">
+    <section class="er-hero">
+      <h1>Exam Readiness Score</h1>
+      <p>Overall readiness, subject-wise scores, weakness analysis, recommendations, and historical tracking.</p>
+    </section>
+
+    <div class="er-container">
+      <div class="er-toolbar">
+        <label>
+          Exam
+          <select id="er-exam-filter" aria-label="Filter by exam">
+            <option value="">All exams</option>
+            <option value="ssc-cgl">SSC CGL</option>
+            <option value="ssc">SSC</option>
+            <option value="nda">NDA</option>
+            <option value="cds">CDS</option>
+            <option value="afcat">AFCAT</option>
+            <option value="rrb-ntpc">RRB NTPC</option>
+          </select>
+        </label>
+        <button type="button" class="btn btn-outline" id="er-refresh">Refresh</button>
+      </div>
+
+      <div id="er-guest" class="er-guest" hidden>
+        <h2>Sign in to view readiness</h2>
+        <p>Complete mock tests to calculate your exam readiness score and track progress over time.</p>
+        <a href="login.html?next=exam-readiness.html" class="btn btn-cta">Sign In</a>
+      </div>
+
+      <div id="er-loading" class="er-empty">Loading readiness report…</div>
+
+      <div id="er-dashboard" hidden>
+        <div class="er-top-grid">
+          <div class="er-card er-score-card">
+            <div class="er-ring-wrap">
+              <svg class="er-ring" viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="er-ring-bg" cx="60" cy="60" r="52" />
+                <circle class="er-ring-fill" id="er-ring-fill" cx="60" cy="60" r="52" />
+              </svg>
+              <div class="er-ring-center">
+                <span class="er-score-num" id="er-score-num">0</span>
+                <span class="er-score-label">Readiness</span>
+              </div>
+            </div>
+            <span class="er-level-badge" id="er-level-badge">—</span>
+            <p class="er-prob-text">Success probability: <strong id="er-prob">0%</strong></p>
+            <div class="er-prob-bar"><div class="er-prob-fill" id="er-prob-fill"></div></div>
+            <p class="er-delta" id="er-delta" hidden></p>
+          </div>
+
+          <div class="er-card">
+            <h3>Score components</h3>
+            <div id="er-components" class="er-progress-list"></div>
+          </div>
+
+          <div class="er-card">
+            <h3>Summary</h3>
+            <ul class="er-summary-list" id="er-summary"></ul>
+          </div>
+        </div>
+
+        <div class="er-grid">
+          <div class="er-card er-span-6">
+            <h3>Subject-wise scores</h3>
+            <div id="er-subjects" class="er-subject-bars"></div>
+          </div>
+          <div class="er-card er-span-6">
+            <h3>Historical readiness</h3>
+            <div class="er-chart-wrap"><canvas id="er-chart-history"></canvas></div>
+          </div>
+
+          <div class="er-card er-span-6">
+            <h3>Weakness analysis</h3>
+            <div id="er-weaknesses" class="er-weak-list"></div>
+          </div>
+          <div class="er-card er-span-6">
+            <h3>Recommendation engine</h3>
+            <div id="er-recs" class="er-rec-list"></div>
+          </div>
+
+          <div class="er-card er-span-12">
+            <h3>Strong topics</h3>
+            <ul id="er-strengths" class="er-tag-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <hr />
+      <p>© 2024 Sharda Setu — Exam Readiness Score System</p>
+    </div>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="exam-readiness.js"></script>
+  <script src="pwa.js" defer></script>
+</body>
+</html>

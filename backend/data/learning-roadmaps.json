@@ -1,0 +1,2870 @@
+{
+  "roadmaps": [
+    {
+      "id": "34170e06972236952f63",
+      "userId": "test1",
+      "examId": "nda",
+      "examName": "NDA",
+      "examIcon": "🎖️",
+      "examDate": "2026-11-30",
+      "startDate": "2026-05-31",
+      "hoursPerDay": 6,
+      "totalDays": 183,
+      "studyDays": 162,
+      "revisionDays": 21,
+      "dailyPlan": [
+        {
+          "id": "2727df7dc5ae40b08610",
+          "date": "2026-05-31",
+          "dayNumber": 1,
+          "label": "Day 1",
+          "tasks": [
+            {
+              "topicId": "nda-m-alg",
+              "title": "Algebra & Quadratic Equations",
+              "subjectId": "maths",
+              "subjectName": "Mathematics",
+              "hours": 6,
+              "portion": 0.5,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 6,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "66facccc267b2cc7422e",
+          "date": "2026-06-01",
+          "dayNumber": 2,
+          "label": "Day 2",
+          "tasks": [
+            {
+              "topicId": "nda-m-alg",
+              "title": "Algebra & Quadratic Equations",
+              "subjectId": "maths",
+              "subjectName": "Mathematics",
+              "hours": 6,
+              "portion": 0.5,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 6,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "2bf0efb8b3ad48f897c0",
+          "date": "2026-06-02",
+          "dayNumber": 3,
+          "label": "Day 3",
+          "tasks": [
+            {
+              "topicId": "nda-m-trig",
+              "title": "Trigonometry (Identities & Equations)",
+              "subjectId": "maths",
+              "subjectName": "Mathematics",
+              "hours": 6,
+              "portion": 0.43,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 6,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "c22f0be57c9a51c42051",
+          "date": "2026-06-03",
+          "dayNumber": 4,
+          "label": "Day 4",
+          "tasks": [
+            {
+              "topicId": "nda-m-trig",
+              "title": "Trigonometry (Identities & Equations)",
+              "subjectId": "maths",
+              "subjectName": "Mathematics",
+              "hours": 6,
+              "portion": 0.43,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 6,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "e219fa08c6927ce82afa",
+          "date": "2026-06-04",
+          "dayNumber": 5,
+          "label": "Day 5",
+          "tasks": [
+            {
+              "topicId": "nda-m-trig",
+              "title": "Trigonometry (Identities & Equations)",
+              "subjectId": "maths",
+              "subjectName": "Mathematics",
+              "hours": 2,
+              "portion": 0.14,
+              "completed": false,
+              "completedAt": null
+            },
+            {
+              "topicId": "nda-m-calc",
+              "title": "Calculus: Limits & Derivatives Intro",
+              "subjectId": "maths",
+              "subjectName": "Mathematics",
+              "hours": 4,
+              "portion": 0.4,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 6,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "f74686439e15c8f293e8",
+          "date": "2026-06-05",
+          "dayNumber": 6,
+          "label": "Day 6",
+          "tasks": [
+            {
+              "topicId": "nda-m-calc",
+              "title": "Calculus: Limits & Derivatives Intro",
+              "subjectId": "maths",
+              "subjectName": "Mathematics",
+              "hours": 6,
+              "portion": 0.6,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 6,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "27e15e76f259f231bcba",
+          "date": "2026-06-06",
+          "dayNumber": 7,
+          "label": "Day 7",
+          "tasks": [
+            {
+              "topicId": "nda-m-vec",
+              "title": "Vectors & 3D Geometry Basics",
+              "subjectId": "maths",
+              "subjectName": "Mathematics",
+              "hours": 6,
+              "portion": 0.6,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 6,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "3c4f6f927a3b72fc71cc",
+          "date": "2026-06-07",
+          "dayNumber": 8,
+          "label": "Day 8",
+          "tasks": [
+            {
+              "topicId": "nda-m-vec",
+              "title": "Vectors & 3D Geometry Basics",
+              "subjectId": "maths",
+              "subjectName": "Mathematics",
+              "hours": 4,
+              "portion": 0.4,
+              "completed": false,
+              "completedAt": null
+            },
+            {
+              "topicId": "nda-m-stat",
+              "title": "Statistics & Probability",
+              "subjectId": "maths",
+              "subjectName": "Mathematics",
+              "hours": 2,
+              "portion": 0.25,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 6,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "4ac0cf212d459863af18",
+          "date": "2026-06-08",
+          "dayNumber": 9,
+          "label": "Day 9",
+          "tasks": [
+            {
+              "topicId": "nda-m-stat",
+              "title": "Statistics & Probability",
+              "subjectId": "maths",
+              "subjectName": "Mathematics",
+              "hours": 6,
+              "portion": 0.75,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 6,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "cd6750144b3130d693c4",
+          "date": "2026-06-09",
+          "dayNumber": 10,
+          "label": "Day 10",
+          "tasks": [
+            {
+              "topicId": "nda-m-mat",
+              "title": "Matrices & Determinants",
+              "subjectId": "maths",
+              "subjectName": "Mathematics",
+              "hours": 6,
+              "portion": 0.75,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 6,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "a4a88c5bf3aa6271b319",
+          "date": "2026-06-10",
+          "dayNumber": 11,
+          "label": "Day 11",
+          "tasks": [
+            {
+              "topicId": "nda-m-mat",
+              "title": "Matrices & Determinants",
+              "subjectId": "maths",
+              "subjectName": "Mathematics",
+              "hours": 2,
+              "portion": 0.25,
+              "completed": false,
+              "completedAt": null
+            },
+            {
+              "topicId": "nda-g-eng",
+              "title": "English: Grammar, Vocab, RC",
+              "subjectId": "gmat",
+              "subjectName": "GAT — General Ability",
+              "hours": 4,
+              "portion": 0.33,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 6,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "f08a1b55760d74c5c43d",
+          "date": "2026-06-11",
+          "dayNumber": 12,
+          "label": "Day 12",
+          "tasks": [
+            {
+              "topicId": "nda-g-eng",
+              "title": "English: Grammar, Vocab, RC",
+              "subjectId": "gmat",
+              "subjectName": "GAT — General Ability",
+              "hours": 6,
+              "portion": 0.5,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 6,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "87fe9b4269455261af5c",
+          "date": "2026-06-12",
+          "dayNumber": 13,
+          "label": "Day 13",
+          "tasks": [
+            {
+              "topicId": "nda-g-eng",
+              "title": "English: Grammar, Vocab, RC",
+              "subjectId": "gmat",
+              "subjectName": "GAT — General Ability",
+              "hours": 2,
+              "portion": 0.17,
+              "completed": false,
+              "completedAt": null
+            },
+            {
+              "topicId": "nda-g-phy",
+              "title": "Physics: Mechanics & Properties",
+              "subjectId": "gmat",
+              "subjectName": "GAT — General Ability",
+              "hours": 4,
+              "portion": 0.29,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 6,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "45af2bbadcc39d558f5d",
+          "date": "2026-06-13",
+          "dayNumber": 14,
+          "label": "Day 14",
+          "tasks": [
+            {
+              "topicId": "nda-g-phy",
+              "title": "Physics: Mechanics & Properties",
+              "subjectId": "gmat",
+              "subjectName": "GAT — General Ability",
+              "hours": 6,
+              "portion": 0.43,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 6,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "d042bc9b168f1cdacb0d",
+          "date": "2026-06-14",
+          "dayNumber": 15,
+          "label": "Day 15",
+          "tasks": [
+            {
+              "topicId": "nda-g-phy",
+              "title": "Physics: Mechanics & Properties",
+              "subjectId": "gmat",
+              "subjectName": "GAT — General Ability",
+              "hours": 4,
+              "portion": 0.29,
+              "completed": false,
+              "completedAt": null
+            },
+            {
+              "topicId": "nda-g-chem",
+              "title": "Chemistry: Physical & Inorganic Basics",
+              "subjectId": "gmat",
+              "subjectName": "GAT — General Ability",
+              "hours": 2,
+              "portion": 0.17,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 6,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "aa568a96dff66d922e1a",
+          "date": "2026-06-15",
+          "dayNumber": 16,
+          "label": "Day 16",
+          "tasks": [
+            {
+              "topicId": "nda-g-chem",
+              "title": "Chemistry: Physical & Inorganic Basics",
+              "subjectId": "gmat",
+              "subjectName": "GAT — General Ability",
+              "hours": 6,
+              "portion": 0.5,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 6,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "9e72a95754e78b41551e",
+          "date": "2026-06-16",
+          "dayNumber": 17,
+          "label": "Day 17",
+          "tasks": [
+            {
+              "topicId": "nda-g-chem",
+              "title": "Chemistry: Physical & Inorganic Basics",
+              "subjectId": "gmat",
+              "subjectName": "GAT — General Ability",
+              "hours": 4,
+              "portion": 0.33,
+              "completed": false,
+              "completedAt": null
+            },
+            {
+              "topicId": "nda-g-ssb",
+              "title": "SSB Orientation & Current Affairs",
+              "subjectId": "gmat",
+              "subjectName": "GAT — General Ability",
+              "hours": 2,
+              "portion": 0.25,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 6,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "c197e0d35f37d658ca51",
+          "date": "2026-06-17",
+          "dayNumber": 18,
+          "label": "Day 18",
+          "tasks": [
+            {
+              "topicId": "nda-g-ssb",
+              "title": "SSB Orientation & Current Affairs",
+              "subjectId": "gmat",
+              "subjectName": "GAT — General Ability",
+              "hours": 6,
+              "portion": 0.75,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 6,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "b597791c7c9c76125302",
+          "date": "2026-06-18",
+          "dayNumber": 19,
+          "label": "Day 19",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "d3023c957fdf30d5fcb9",
+          "date": "2026-06-19",
+          "dayNumber": 20,
+          "label": "Day 20",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "9ef1d8b66316a0850265",
+          "date": "2026-06-20",
+          "dayNumber": 21,
+          "label": "Day 21",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "2ffb6f439319f9b12718",
+          "date": "2026-06-21",
+          "dayNumber": 22,
+          "label": "Day 22",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "e20dfc21966e60c3f503",
+          "date": "2026-06-22",
+          "dayNumber": 23,
+          "label": "Day 23",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "3353487a8c083b4a72f4",
+          "date": "2026-06-23",
+          "dayNumber": 24,
+          "label": "Day 24",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "6f4cd4aff689227fe2d9",
+          "date": "2026-06-24",
+          "dayNumber": 25,
+          "label": "Day 25",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "710bec61ba62038e20d1",
+          "date": "2026-06-25",
+          "dayNumber": 26,
+          "label": "Day 26",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "6b33eb1c4f0e1d937c73",
+          "date": "2026-06-26",
+          "dayNumber": 27,
+          "label": "Day 27",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "c40c3f43b8c48b151d5a",
+          "date": "2026-06-27",
+          "dayNumber": 28,
+          "label": "Day 28",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "f0f7b6d2c275de2a52fc",
+          "date": "2026-06-28",
+          "dayNumber": 29,
+          "label": "Day 29",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "060e5a6cb5eb7a85449a",
+          "date": "2026-06-29",
+          "dayNumber": 30,
+          "label": "Day 30",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "1cd7ca345d8c36903f4d",
+          "date": "2026-06-30",
+          "dayNumber": 31,
+          "label": "Day 31",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "4988276a7ec3d81bcbcb",
+          "date": "2026-07-01",
+          "dayNumber": 32,
+          "label": "Day 32",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "00280d43d93b759eec7f",
+          "date": "2026-07-02",
+          "dayNumber": 33,
+          "label": "Day 33",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "4b326166e2d90e8582f2",
+          "date": "2026-07-03",
+          "dayNumber": 34,
+          "label": "Day 34",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "9156a0ac38f5ef686fd8",
+          "date": "2026-07-04",
+          "dayNumber": 35,
+          "label": "Day 35",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "7acd7af8cb6481e6c4f6",
+          "date": "2026-07-05",
+          "dayNumber": 36,
+          "label": "Day 36",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "2137689b867c870f19c0",
+          "date": "2026-07-06",
+          "dayNumber": 37,
+          "label": "Day 37",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "28d193a489860c052397",
+          "date": "2026-07-07",
+          "dayNumber": 38,
+          "label": "Day 38",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "d35953b30dfb13207c94",
+          "date": "2026-07-08",
+          "dayNumber": 39,
+          "label": "Day 39",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "4d72c9710d5bcccb1fc4",
+          "date": "2026-07-09",
+          "dayNumber": 40,
+          "label": "Day 40",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "de2915f9139db4e19275",
+          "date": "2026-07-10",
+          "dayNumber": 41,
+          "label": "Day 41",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "a924c8cc74f1b73b3c98",
+          "date": "2026-07-11",
+          "dayNumber": 42,
+          "label": "Day 42",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "1341211ae5ea074a83cd",
+          "date": "2026-07-12",
+          "dayNumber": 43,
+          "label": "Day 43",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "d3969324613367edbb62",
+          "date": "2026-07-13",
+          "dayNumber": 44,
+          "label": "Day 44",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "d2435940f2ef02cee48c",
+          "date": "2026-07-14",
+          "dayNumber": 45,
+          "label": "Day 45",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "03af00f50312bcabcf36",
+          "date": "2026-07-15",
+          "dayNumber": 46,
+          "label": "Day 46",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "8ab37e667616d2621416",
+          "date": "2026-07-16",
+          "dayNumber": 47,
+          "label": "Day 47",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "0a4fa71e5c337084ba12",
+          "date": "2026-07-17",
+          "dayNumber": 48,
+          "label": "Day 48",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "4d1dfcb18916b9128081",
+          "date": "2026-07-18",
+          "dayNumber": 49,
+          "label": "Day 49",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "eeb85aa36e76620def48",
+          "date": "2026-07-19",
+          "dayNumber": 50,
+          "label": "Day 50",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "defb2b687091fd9ca84d",
+          "date": "2026-07-20",
+          "dayNumber": 51,
+          "label": "Day 51",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "7a51bc631cf76a934c59",
+          "date": "2026-07-21",
+          "dayNumber": 52,
+          "label": "Day 52",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "10e5b57fe3f4efe9c9f7",
+          "date": "2026-07-22",
+          "dayNumber": 53,
+          "label": "Day 53",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "44d04436a63075e1e079",
+          "date": "2026-07-23",
+          "dayNumber": 54,
+          "label": "Day 54",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "4fc375f9f28af9b78bf6",
+          "date": "2026-07-24",
+          "dayNumber": 55,
+          "label": "Day 55",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "35e39b39ac3a02773b79",
+          "date": "2026-07-25",
+          "dayNumber": 56,
+          "label": "Day 56",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "58c61ef0984023c26650",
+          "date": "2026-07-26",
+          "dayNumber": 57,
+          "label": "Day 57",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "74395339ed6ff43aa29a",
+          "date": "2026-07-27",
+          "dayNumber": 58,
+          "label": "Day 58",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "84beada80a3aef6539d9",
+          "date": "2026-07-28",
+          "dayNumber": 59,
+          "label": "Day 59",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "fc1f717ebae36e287806",
+          "date": "2026-07-29",
+          "dayNumber": 60,
+          "label": "Day 60",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "1a7bb9b3965ed36e4b77",
+          "date": "2026-07-30",
+          "dayNumber": 61,
+          "label": "Day 61",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "c26145b24dd45f520191",
+          "date": "2026-07-31",
+          "dayNumber": 62,
+          "label": "Day 62",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "5f6f66c07c70a8977271",
+          "date": "2026-08-01",
+          "dayNumber": 63,
+          "label": "Day 63",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "61300fe4e85eeda3a28e",
+          "date": "2026-08-02",
+          "dayNumber": 64,
+          "label": "Day 64",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "db308b519de0997cd079",
+          "date": "2026-08-03",
+          "dayNumber": 65,
+          "label": "Day 65",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "09bb058a47670bfe5f40",
+          "date": "2026-08-04",
+          "dayNumber": 66,
+          "label": "Day 66",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "a13aab1a458ad0687ff3",
+          "date": "2026-08-05",
+          "dayNumber": 67,
+          "label": "Day 67",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "2f32102d77b353b41c26",
+          "date": "2026-08-06",
+          "dayNumber": 68,
+          "label": "Day 68",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "a37c9f0127d7de7c1b7c",
+          "date": "2026-08-07",
+          "dayNumber": 69,
+          "label": "Day 69",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "eea6e3c4fffc13ac1559",
+          "date": "2026-08-08",
+          "dayNumber": 70,
+          "label": "Day 70",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "f1d0698829c178f5ec16",
+          "date": "2026-08-09",
+          "dayNumber": 71,
+          "label": "Day 71",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "3319e0d6bc0238f283e8",
+          "date": "2026-08-10",
+          "dayNumber": 72,
+          "label": "Day 72",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "ff2aa109ceae4c7cb8d5",
+          "date": "2026-08-11",
+          "dayNumber": 73,
+          "label": "Day 73",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "ad3d9681bd1ecfbd2713",
+          "date": "2026-08-12",
+          "dayNumber": 74,
+          "label": "Day 74",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "2fd05f23097211f6a325",
+          "date": "2026-08-13",
+          "dayNumber": 75,
+          "label": "Day 75",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "de97755abd8c348dc694",
+          "date": "2026-08-14",
+          "dayNumber": 76,
+          "label": "Day 76",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "0805346d86b6638157fc",
+          "date": "2026-08-15",
+          "dayNumber": 77,
+          "label": "Day 77",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "34ef7a1f9f29040c0f68",
+          "date": "2026-08-16",
+          "dayNumber": 78,
+          "label": "Day 78",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "8670d442fc8d9d08497c",
+          "date": "2026-08-17",
+          "dayNumber": 79,
+          "label": "Day 79",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "3bfd3bb8a1f8f44cd5f2",
+          "date": "2026-08-18",
+          "dayNumber": 80,
+          "label": "Day 80",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "e969f1f811f4922425a3",
+          "date": "2026-08-19",
+          "dayNumber": 81,
+          "label": "Day 81",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "ea10a4d94030a6654032",
+          "date": "2026-08-20",
+          "dayNumber": 82,
+          "label": "Day 82",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "e8a253a9882f32dbcdf0",
+          "date": "2026-08-21",
+          "dayNumber": 83,
+          "label": "Day 83",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "a6c3c34249234f9ee400",
+          "date": "2026-08-22",
+          "dayNumber": 84,
+          "label": "Day 84",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "c88058bad53e9125d19a",
+          "date": "2026-08-23",
+          "dayNumber": 85,
+          "label": "Day 85",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "408d1cb604158fff3172",
+          "date": "2026-08-24",
+          "dayNumber": 86,
+          "label": "Day 86",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "d219b242e232e713ef8d",
+          "date": "2026-08-25",
+          "dayNumber": 87,
+          "label": "Day 87",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "91d9c2ccfc726cc305ec",
+          "date": "2026-08-26",
+          "dayNumber": 88,
+          "label": "Day 88",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "b8f198700d6b87387352",
+          "date": "2026-08-27",
+          "dayNumber": 89,
+          "label": "Day 89",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "404a15eb43550ecf4f6e",
+          "date": "2026-08-28",
+          "dayNumber": 90,
+          "label": "Day 90",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "ad005f0e0d2ac76f6067",
+          "date": "2026-08-29",
+          "dayNumber": 91,
+          "label": "Day 91",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "d70ce6fa0059447bc027",
+          "date": "2026-08-30",
+          "dayNumber": 92,
+          "label": "Day 92",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "1b7d694e451293a44b90",
+          "date": "2026-08-31",
+          "dayNumber": 93,
+          "label": "Day 93",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "a148181594697322e6fd",
+          "date": "2026-09-01",
+          "dayNumber": 94,
+          "label": "Day 94",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "87ed1f858e081ae9bfd4",
+          "date": "2026-09-02",
+          "dayNumber": 95,
+          "label": "Day 95",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "7e7d1147b74d2a3b0660",
+          "date": "2026-09-03",
+          "dayNumber": 96,
+          "label": "Day 96",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "3138c96d60173ea6e12e",
+          "date": "2026-09-04",
+          "dayNumber": 97,
+          "label": "Day 97",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "0c3d9ea127e92ef765e4",
+          "date": "2026-09-05",
+          "dayNumber": 98,
+          "label": "Day 98",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "904a37b7a050a3cfd836",
+          "date": "2026-09-06",
+          "dayNumber": 99,
+          "label": "Day 99",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "5711d63b3125233a1d8e",
+          "date": "2026-09-07",
+          "dayNumber": 100,
+          "label": "Day 100",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "f50b3491ae579eeee69b",
+          "date": "2026-09-08",
+          "dayNumber": 101,
+          "label": "Day 101",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "53c77330f1bc28e07285",
+          "date": "2026-09-09",
+          "dayNumber": 102,
+          "label": "Day 102",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "d9f6e39a49de315bf784",
+          "date": "2026-09-10",
+          "dayNumber": 103,
+          "label": "Day 103",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "c34923820e3cd383e68f",
+          "date": "2026-09-11",
+          "dayNumber": 104,
+          "label": "Day 104",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "71817abb325a0432ad94",
+          "date": "2026-09-12",
+          "dayNumber": 105,
+          "label": "Day 105",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "6e5bd9e6946d2f54db6c",
+          "date": "2026-09-13",
+          "dayNumber": 106,
+          "label": "Day 106",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "91db55b951ff0287f7c4",
+          "date": "2026-09-14",
+          "dayNumber": 107,
+          "label": "Day 107",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "f73ce801adf18acbf503",
+          "date": "2026-09-15",
+          "dayNumber": 108,
+          "label": "Day 108",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "14bdb878c3745bc3101e",
+          "date": "2026-09-16",
+          "dayNumber": 109,
+          "label": "Day 109",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "a3ce012e99df94f45acd",
+          "date": "2026-09-17",
+          "dayNumber": 110,
+          "label": "Day 110",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "3c6033d4b9fb0f5129c0",
+          "date": "2026-09-18",
+          "dayNumber": 111,
+          "label": "Day 111",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "96646676ceba100e23d2",
+          "date": "2026-09-19",
+          "dayNumber": 112,
+          "label": "Day 112",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "1c6fa7703b168b8da741",
+          "date": "2026-09-20",
+          "dayNumber": 113,
+          "label": "Day 113",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "02943e905a1db15085cf",
+          "date": "2026-09-21",
+          "dayNumber": 114,
+          "label": "Day 114",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "51750410dc3d7fc1bf57",
+          "date": "2026-09-22",
+          "dayNumber": 115,
+          "label": "Day 115",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "0818dfd2006cebae4b88",
+          "date": "2026-09-23",
+          "dayNumber": 116,
+          "label": "Day 116",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "5badbf8bce30a2031b8d",
+          "date": "2026-09-24",
+          "dayNumber": 117,
+          "label": "Day 117",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "c64ee0e107320486a986",
+          "date": "2026-09-25",
+          "dayNumber": 118,
+          "label": "Day 118",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "9709fdc185f553d951a9",
+          "date": "2026-09-26",
+          "dayNumber": 119,
+          "label": "Day 119",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "35b113a97677a44c3e7f",
+          "date": "2026-09-27",
+          "dayNumber": 120,
+          "label": "Day 120",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "a69574a3ef3ff9121e58",
+          "date": "2026-09-28",
+          "dayNumber": 121,
+          "label": "Day 121",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "a93cc677fe7f531524c5",
+          "date": "2026-09-29",
+          "dayNumber": 122,
+          "label": "Day 122",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "09dc6532086268307ff8",
+          "date": "2026-09-30",
+          "dayNumber": 123,
+          "label": "Day 123",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "00e73a50264fb67a02a2",
+          "date": "2026-10-01",
+          "dayNumber": 124,
+          "label": "Day 124",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "b70029f93bffc3dad0f2",
+          "date": "2026-10-02",
+          "dayNumber": 125,
+          "label": "Day 125",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "07e3f3f1990bff9d0d81",
+          "date": "2026-10-03",
+          "dayNumber": 126,
+          "label": "Day 126",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "72f9f0b2e40f1976eb30",
+          "date": "2026-10-04",
+          "dayNumber": 127,
+          "label": "Day 127",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "394b99655c2c4af981f9",
+          "date": "2026-10-05",
+          "dayNumber": 128,
+          "label": "Day 128",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "9dbd5885588503b05aa5",
+          "date": "2026-10-06",
+          "dayNumber": 129,
+          "label": "Day 129",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "cd581ac4a6c1191690e3",
+          "date": "2026-10-07",
+          "dayNumber": 130,
+          "label": "Day 130",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "bb27eb8db8c2ff060a11",
+          "date": "2026-10-08",
+          "dayNumber": 131,
+          "label": "Day 131",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "a4e28ee37214a09f88e9",
+          "date": "2026-10-09",
+          "dayNumber": 132,
+          "label": "Day 132",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "04415a6545b6e0dda396",
+          "date": "2026-10-10",
+          "dayNumber": 133,
+          "label": "Day 133",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "366047594122e4466db8",
+          "date": "2026-10-11",
+          "dayNumber": 134,
+          "label": "Day 134",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "18e046d4980172fd8a84",
+          "date": "2026-10-12",
+          "dayNumber": 135,
+          "label": "Day 135",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "e6b4a015086826a992a0",
+          "date": "2026-10-13",
+          "dayNumber": 136,
+          "label": "Day 136",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "45c60bab308ae46ef57d",
+          "date": "2026-10-14",
+          "dayNumber": 137,
+          "label": "Day 137",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "a2238a94d9e312c411ec",
+          "date": "2026-10-15",
+          "dayNumber": 138,
+          "label": "Day 138",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "ef8cc4a36396faea2bd5",
+          "date": "2026-10-16",
+          "dayNumber": 139,
+          "label": "Day 139",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "749999c7ac66d5304dd4",
+          "date": "2026-10-17",
+          "dayNumber": 140,
+          "label": "Day 140",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "2c9525cf9292795ed086",
+          "date": "2026-10-18",
+          "dayNumber": 141,
+          "label": "Day 141",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "e034d9fdb11d959872a1",
+          "date": "2026-10-19",
+          "dayNumber": 142,
+          "label": "Day 142",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "f645accfe26ea264ac75",
+          "date": "2026-10-20",
+          "dayNumber": 143,
+          "label": "Day 143",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "0da39991bfe4264a99b3",
+          "date": "2026-10-21",
+          "dayNumber": 144,
+          "label": "Day 144",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "fe950c9f1d87f5bbb18f",
+          "date": "2026-10-22",
+          "dayNumber": 145,
+          "label": "Day 145",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "2f8c54b7526bc45317a3",
+          "date": "2026-10-23",
+          "dayNumber": 146,
+          "label": "Day 146",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "450859c69890548ca6c6",
+          "date": "2026-10-24",
+          "dayNumber": 147,
+          "label": "Day 147",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "ab80a55536c951df848c",
+          "date": "2026-10-25",
+          "dayNumber": 148,
+          "label": "Day 148",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "2b0664a8dfa09f6a0b16",
+          "date": "2026-10-26",
+          "dayNumber": 149,
+          "label": "Day 149",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "ccc705421610ec345f84",
+          "date": "2026-10-27",
+          "dayNumber": 150,
+          "label": "Day 150",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "cb080a863511fff96163",
+          "date": "2026-10-28",
+          "dayNumber": 151,
+          "label": "Day 151",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "39260c6e6791614abbdc",
+          "date": "2026-10-29",
+          "dayNumber": 152,
+          "label": "Day 152",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "6963d994cd3dd9912953",
+          "date": "2026-10-30",
+          "dayNumber": 153,
+          "label": "Day 153",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "46ca60be5d9608389c36",
+          "date": "2026-10-31",
+          "dayNumber": 154,
+          "label": "Day 154",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "98f8cef1cb3e571a0a3c",
+          "date": "2026-11-01",
+          "dayNumber": 155,
+          "label": "Day 155",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "2c96c4ae24507082d6f3",
+          "date": "2026-11-02",
+          "dayNumber": 156,
+          "label": "Day 156",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "e473773e250e8fcff57e",
+          "date": "2026-11-03",
+          "dayNumber": 157,
+          "label": "Day 157",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "11c15fbdcaef032fedb7",
+          "date": "2026-11-04",
+          "dayNumber": 158,
+          "label": "Day 158",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "5042c6349ea2bccb01a6",
+          "date": "2026-11-05",
+          "dayNumber": 159,
+          "label": "Day 159",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "518d2d8d550a31311826",
+          "date": "2026-11-06",
+          "dayNumber": 160,
+          "label": "Day 160",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "5641edef0cfbd0c1d6ca",
+          "date": "2026-11-07",
+          "dayNumber": 161,
+          "label": "Day 161",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "28f7c4329796deced04a",
+          "date": "2026-11-08",
+          "dayNumber": 162,
+          "label": "Day 162",
+          "tasks": [],
+          "plannedHours": 0,
+          "completed": false,
+          "isRevision": false
+        },
+        {
+          "id": "6445f090b6ab9fd0934a",
+          "date": "2026-11-09",
+          "dayNumber": 163,
+          "label": "Revision 1",
+          "tasks": [
+            {
+              "topicId": "revision-1",
+              "title": "Mixed subject revision + PYQs",
+              "subjectId": "revision",
+              "subjectName": "Revision",
+              "hours": 4,
+              "portion": 1,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 4,
+          "completed": false,
+          "isRevision": true
+        },
+        {
+          "id": "45fc706458cd83b1ade7",
+          "date": "2026-11-10",
+          "dayNumber": 164,
+          "label": "Revision 2",
+          "tasks": [
+            {
+              "topicId": "revision-2",
+              "title": "Weak topics revision + short notes",
+              "subjectId": "revision",
+              "subjectName": "Revision",
+              "hours": 4,
+              "portion": 1,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 4,
+          "completed": false,
+          "isRevision": true
+        },
+        {
+          "id": "566ee6de5a0c2687b3d5",
+          "date": "2026-11-11",
+          "dayNumber": 165,
+          "label": "Revision 3",
+          "tasks": [
+            {
+              "topicId": "revision-3",
+              "title": "Mixed subject revision + PYQs",
+              "subjectId": "revision",
+              "subjectName": "Revision",
+              "hours": 4,
+              "portion": 1,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 4,
+          "completed": false,
+          "isRevision": true
+        },
+        {
+          "id": "c39c5e0309ef61f82c9e",
+          "date": "2026-11-12",
+          "dayNumber": 166,
+          "label": "Revision 4",
+          "tasks": [
+            {
+              "topicId": "revision-4",
+              "title": "Weak topics revision + short notes",
+              "subjectId": "revision",
+              "subjectName": "Revision",
+              "hours": 4,
+              "portion": 1,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 4,
+          "completed": false,
+          "isRevision": true
+        },
+        {
+          "id": "789ca28c4280c673118a",
+          "date": "2026-11-13",
+          "dayNumber": 167,
+          "label": "Revision 5",
+          "tasks": [
+            {
+              "topicId": "revision-5",
+              "title": "Mixed subject revision + PYQs",
+              "subjectId": "revision",
+              "subjectName": "Revision",
+              "hours": 4,
+              "portion": 1,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 4,
+          "completed": false,
+          "isRevision": true
+        },
+        {
+          "id": "18383bbfb4c63aaa0bf2",
+          "date": "2026-11-14",
+          "dayNumber": 168,
+          "label": "Revision 6",
+          "tasks": [
+            {
+              "topicId": "revision-6",
+              "title": "Weak topics revision + short notes",
+              "subjectId": "revision",
+              "subjectName": "Revision",
+              "hours": 4,
+              "portion": 1,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 4,
+          "completed": false,
+          "isRevision": true
+        },
+        {
+          "id": "3eb091a1a06b5ece7f72",
+          "date": "2026-11-15",
+          "dayNumber": 169,
+          "label": "Revision 7",
+          "tasks": [
+            {
+              "topicId": "revision-7",
+              "title": "Mixed subject revision + PYQs",
+              "subjectId": "revision",
+              "subjectName": "Revision",
+              "hours": 4,
+              "portion": 1,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 4,
+          "completed": false,
+          "isRevision": true
+        },
+        {
+          "id": "e807ccf78e362e7891d7",
+          "date": "2026-11-16",
+          "dayNumber": 170,
+          "label": "Revision 8",
+          "tasks": [
+            {
+              "topicId": "revision-8",
+              "title": "Weak topics revision + short notes",
+              "subjectId": "revision",
+              "subjectName": "Revision",
+              "hours": 4,
+              "portion": 1,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 4,
+          "completed": false,
+          "isRevision": true
+        },
+        {
+          "id": "5dcabf57ed7bf6bdff0d",
+          "date": "2026-11-17",
+          "dayNumber": 171,
+          "label": "Revision 9",
+          "tasks": [
+            {
+              "topicId": "revision-9",
+              "title": "Mixed subject revision + PYQs",
+              "subjectId": "revision",
+              "subjectName": "Revision",
+              "hours": 4,
+              "portion": 1,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 4,
+          "completed": false,
+          "isRevision": true
+        },
+        {
+          "id": "c542631c590f3fc494cd",
+          "date": "2026-11-18",
+          "dayNumber": 172,
+          "label": "Revision 10",
+          "tasks": [
+            {
+              "topicId": "revision-10",
+              "title": "Weak topics revision + short notes",
+              "subjectId": "revision",
+              "subjectName": "Revision",
+              "hours": 4,
+              "portion": 1,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 4,
+          "completed": false,
+          "isRevision": true
+        },
+        {
+          "id": "1bc6bddca3baecde9e1d",
+          "date": "2026-11-19",
+          "dayNumber": 173,
+          "label": "Revision 11",
+          "tasks": [
+            {
+              "topicId": "revision-11",
+              "title": "Mixed subject revision + PYQs",
+              "subjectId": "revision",
+              "subjectName": "Revision",
+              "hours": 4,
+              "portion": 1,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 4,
+          "completed": false,
+          "isRevision": true
+        },
+        {
+          "id": "785717de2181f46c44d8",
+          "date": "2026-11-20",
+          "dayNumber": 174,
+          "label": "Revision 12",
+          "tasks": [
+            {
+              "topicId": "revision-12",
+              "title": "Weak topics revision + short notes",
+              "subjectId": "revision",
+              "subjectName": "Revision",
+              "hours": 4,
+              "portion": 1,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 4,
+          "completed": false,
+          "isRevision": true
+        },
+        {
+          "id": "9f209b174a7fdf9c2519",
+          "date": "2026-11-21",
+          "dayNumber": 175,
+          "label": "Revision 13",
+          "tasks": [
+            {
+              "topicId": "revision-13",
+              "title": "Mixed subject revision + PYQs",
+              "subjectId": "revision",
+              "subjectName": "Revision",
+              "hours": 4,
+              "portion": 1,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 4,
+          "completed": false,
+          "isRevision": true
+        },
+        {
+          "id": "b05b8190a400b92ce341",
+          "date": "2026-11-22",
+          "dayNumber": 176,
+          "label": "Revision 14",
+          "tasks": [
+            {
+              "topicId": "revision-14",
+              "title": "Weak topics revision + short notes",
+              "subjectId": "revision",
+              "subjectName": "Revision",
+              "hours": 4,
+              "portion": 1,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 4,
+          "completed": false,
+          "isRevision": true
+        },
+        {
+          "id": "2c0a1746c419d0a31d3d",
+          "date": "2026-11-23",
+          "dayNumber": 177,
+          "label": "Revision 15",
+          "tasks": [
+            {
+              "topicId": "revision-15",
+              "title": "Mixed subject revision + PYQs",
+              "subjectId": "revision",
+              "subjectName": "Revision",
+              "hours": 4,
+              "portion": 1,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 4,
+          "completed": false,
+          "isRevision": true
+        },
+        {
+          "id": "5c4aafe05d170efbbb23",
+          "date": "2026-11-24",
+          "dayNumber": 178,
+          "label": "Revision 16",
+          "tasks": [
+            {
+              "topicId": "revision-16",
+              "title": "Weak topics revision + short notes",
+              "subjectId": "revision",
+              "subjectName": "Revision",
+              "hours": 4,
+              "portion": 1,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 4,
+          "completed": false,
+          "isRevision": true
+        },
+        {
+          "id": "364122c86a34457c5daf",
+          "date": "2026-11-25",
+          "dayNumber": 179,
+          "label": "Revision 17",
+          "tasks": [
+            {
+              "topicId": "revision-17",
+              "title": "Mixed subject revision + PYQs",
+              "subjectId": "revision",
+              "subjectName": "Revision",
+              "hours": 4,
+              "portion": 1,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 4,
+          "completed": false,
+          "isRevision": true
+        },
+        {
+          "id": "93495c0e0d226d7862da",
+          "date": "2026-11-26",
+          "dayNumber": 180,
+          "label": "Revision 18",
+          "tasks": [
+            {
+              "topicId": "revision-18",
+              "title": "Weak topics revision + short notes",
+              "subjectId": "revision",
+              "subjectName": "Revision",
+              "hours": 4,
+              "portion": 1,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 4,
+          "completed": false,
+          "isRevision": true
+        },
+        {
+          "id": "38b0d919e5916c1674fc",
+          "date": "2026-11-27",
+          "dayNumber": 181,
+          "label": "Revision 19",
+          "tasks": [
+            {
+              "topicId": "revision-19",
+              "title": "Mixed subject revision + PYQs",
+              "subjectId": "revision",
+              "subjectName": "Revision",
+              "hours": 4,
+              "portion": 1,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 4,
+          "completed": false,
+          "isRevision": true
+        },
+        {
+          "id": "508b14fa002f6841b86a",
+          "date": "2026-11-28",
+          "dayNumber": 182,
+          "label": "Revision 20",
+          "tasks": [
+            {
+              "topicId": "revision-20",
+              "title": "Weak topics revision + short notes",
+              "subjectId": "revision",
+              "subjectName": "Revision",
+              "hours": 4,
+              "portion": 1,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 4,
+          "completed": false,
+          "isRevision": true
+        },
+        {
+          "id": "d8f659252ea027497df0",
+          "date": "2026-11-29",
+          "dayNumber": 183,
+          "label": "Revision 21",
+          "tasks": [
+            {
+              "topicId": "revision-21",
+              "title": "Full mock test + error log review",
+              "subjectId": "revision",
+              "subjectName": "Revision",
+              "hours": 4,
+              "portion": 1,
+              "completed": false,
+              "completedAt": null
+            }
+          ],
+          "plannedHours": 4,
+          "completed": false,
+          "isRevision": true
+        }
+      ],
+      "weeks": [
+        {
+          "weekNumber": 1,
+          "startDate": "2026-05-31",
+          "endDate": "2026-06-06",
+          "targets": [
+            "Algebra & Quadratic Equations",
+            "Trigonometry",
+            "Calculus: Limits & Derivatives Intro",
+            "Vectors & 3D Geometry Basics"
+          ],
+          "summary": "Cover: Algebra & Quadratic Equations, Trigonometry, Calculus: Limits & Derivatives Intro, Vectors & 3D Geometry Basics",
+          "days": [
+            "2727df7dc5ae40b08610",
+            "66facccc267b2cc7422e",
+            "2bf0efb8b3ad48f897c0",
+            "c22f0be57c9a51c42051",
+            "e219fa08c6927ce82afa",
+            "f74686439e15c8f293e8",
+            "27e15e76f259f231bcba"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 2,
+          "startDate": "2026-06-07",
+          "endDate": "2026-06-13",
+          "targets": [
+            "Vectors & 3D Geometry Basics",
+            "Statistics & Probability",
+            "Matrices & Determinants",
+            "English: Grammar, Vocab, RC",
+            "Physics: Mechanics & Properties"
+          ],
+          "summary": "Cover: Vectors & 3D Geometry Basics, Statistics & Probability, Matrices & Determinants, English: Grammar, Vocab, RC, Physics: Mechanics & Properties",
+          "days": [
+            "3c4f6f927a3b72fc71cc",
+            "4ac0cf212d459863af18",
+            "cd6750144b3130d693c4",
+            "a4a88c5bf3aa6271b319",
+            "f08a1b55760d74c5c43d",
+            "87fe9b4269455261af5c",
+            "45af2bbadcc39d558f5d"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 3,
+          "startDate": "2026-06-14",
+          "endDate": "2026-06-20",
+          "targets": [
+            "Physics: Mechanics & Properties",
+            "Chemistry: Physical & Inorganic Basics",
+            "SSB Orientation & Current Affairs"
+          ],
+          "summary": "Cover: Physics: Mechanics & Properties, Chemistry: Physical & Inorganic Basics, SSB Orientation & Current Affairs",
+          "days": [
+            "d042bc9b168f1cdacb0d",
+            "aa568a96dff66d922e1a",
+            "9e72a95754e78b41551e",
+            "c197e0d35f37d658ca51",
+            "b597791c7c9c76125302",
+            "d3023c957fdf30d5fcb9",
+            "9ef1d8b66316a0850265"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 4,
+          "startDate": "2026-06-21",
+          "endDate": "2026-06-27",
+          "targets": [],
+          "summary": "Revision & practice week",
+          "days": [
+            "2ffb6f439319f9b12718",
+            "e20dfc21966e60c3f503",
+            "3353487a8c083b4a72f4",
+            "6f4cd4aff689227fe2d9",
+            "710bec61ba62038e20d1",
+            "6b33eb1c4f0e1d937c73",
+            "c40c3f43b8c48b151d5a"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 5,
+          "startDate": "2026-06-28",
+          "endDate": "2026-07-04",
+          "targets": [],
+          "summary": "Revision & practice week",
+          "days": [
+            "f0f7b6d2c275de2a52fc",
+            "060e5a6cb5eb7a85449a",
+            "1cd7ca345d8c36903f4d",
+            "4988276a7ec3d81bcbcb",
+            "00280d43d93b759eec7f",
+            "4b326166e2d90e8582f2",
+            "9156a0ac38f5ef686fd8"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 6,
+          "startDate": "2026-07-05",
+          "endDate": "2026-07-11",
+          "targets": [],
+          "summary": "Revision & practice week",
+          "days": [
+            "7acd7af8cb6481e6c4f6",
+            "2137689b867c870f19c0",
+            "28d193a489860c052397",
+            "d35953b30dfb13207c94",
+            "4d72c9710d5bcccb1fc4",
+            "de2915f9139db4e19275",
+            "a924c8cc74f1b73b3c98"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 7,
+          "startDate": "2026-07-12",
+          "endDate": "2026-07-18",
+          "targets": [],
+          "summary": "Revision & practice week",
+          "days": [
+            "1341211ae5ea074a83cd",
+            "d3969324613367edbb62",
+            "d2435940f2ef02cee48c",
+            "03af00f50312bcabcf36",
+            "8ab37e667616d2621416",
+            "0a4fa71e5c337084ba12",
+            "4d1dfcb18916b9128081"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 8,
+          "startDate": "2026-07-19",
+          "endDate": "2026-07-25",
+          "targets": [],
+          "summary": "Revision & practice week",
+          "days": [
+            "eeb85aa36e76620def48",
+            "defb2b687091fd9ca84d",
+            "7a51bc631cf76a934c59",
+            "10e5b57fe3f4efe9c9f7",
+            "44d04436a63075e1e079",
+            "4fc375f9f28af9b78bf6",
+            "35e39b39ac3a02773b79"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 9,
+          "startDate": "2026-07-26",
+          "endDate": "2026-08-01",
+          "targets": [],
+          "summary": "Revision & practice week",
+          "days": [
+            "58c61ef0984023c26650",
+            "74395339ed6ff43aa29a",
+            "84beada80a3aef6539d9",
+            "fc1f717ebae36e287806",
+            "1a7bb9b3965ed36e4b77",
+            "c26145b24dd45f520191",
+            "5f6f66c07c70a8977271"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 10,
+          "startDate": "2026-08-02",
+          "endDate": "2026-08-08",
+          "targets": [],
+          "summary": "Revision & practice week",
+          "days": [
+            "61300fe4e85eeda3a28e",
+            "db308b519de0997cd079",
+            "09bb058a47670bfe5f40",
+            "a13aab1a458ad0687ff3",
+            "2f32102d77b353b41c26",
+            "a37c9f0127d7de7c1b7c",
+            "eea6e3c4fffc13ac1559"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 11,
+          "startDate": "2026-08-09",
+          "endDate": "2026-08-15",
+          "targets": [],
+          "summary": "Revision & practice week",
+          "days": [
+            "f1d0698829c178f5ec16",
+            "3319e0d6bc0238f283e8",
+            "ff2aa109ceae4c7cb8d5",
+            "ad3d9681bd1ecfbd2713",
+            "2fd05f23097211f6a325",
+            "de97755abd8c348dc694",
+            "0805346d86b6638157fc"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 12,
+          "startDate": "2026-08-16",
+          "endDate": "2026-08-22",
+          "targets": [],
+          "summary": "Revision & practice week",
+          "days": [
+            "34ef7a1f9f29040c0f68",
+            "8670d442fc8d9d08497c",
+            "3bfd3bb8a1f8f44cd5f2",
+            "e969f1f811f4922425a3",
+            "ea10a4d94030a6654032",
+            "e8a253a9882f32dbcdf0",
+            "a6c3c34249234f9ee400"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 13,
+          "startDate": "2026-08-23",
+          "endDate": "2026-08-29",
+          "targets": [],
+          "summary": "Revision & practice week",
+          "days": [
+            "c88058bad53e9125d19a",
+            "408d1cb604158fff3172",
+            "d219b242e232e713ef8d",
+            "91d9c2ccfc726cc305ec",
+            "b8f198700d6b87387352",
+            "404a15eb43550ecf4f6e",
+            "ad005f0e0d2ac76f6067"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 14,
+          "startDate": "2026-08-30",
+          "endDate": "2026-09-05",
+          "targets": [],
+          "summary": "Revision & practice week",
+          "days": [
+            "d70ce6fa0059447bc027",
+            "1b7d694e451293a44b90",
+            "a148181594697322e6fd",
+            "87ed1f858e081ae9bfd4",
+            "7e7d1147b74d2a3b0660",
+            "3138c96d60173ea6e12e",
+            "0c3d9ea127e92ef765e4"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 15,
+          "startDate": "2026-09-06",
+          "endDate": "2026-09-12",
+          "targets": [],
+          "summary": "Revision & practice week",
+          "days": [
+            "904a37b7a050a3cfd836",
+            "5711d63b3125233a1d8e",
+            "f50b3491ae579eeee69b",
+            "53c77330f1bc28e07285",
+            "d9f6e39a49de315bf784",
+            "c34923820e3cd383e68f",
+            "71817abb325a0432ad94"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 16,
+          "startDate": "2026-09-13",
+          "endDate": "2026-09-19",
+          "targets": [],
+          "summary": "Revision & practice week",
+          "days": [
+            "6e5bd9e6946d2f54db6c",
+            "91db55b951ff0287f7c4",
+            "f73ce801adf18acbf503",
+            "14bdb878c3745bc3101e",
+            "a3ce012e99df94f45acd",
+            "3c6033d4b9fb0f5129c0",
+            "96646676ceba100e23d2"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 17,
+          "startDate": "2026-09-20",
+          "endDate": "2026-09-26",
+          "targets": [],
+          "summary": "Revision & practice week",
+          "days": [
+            "1c6fa7703b168b8da741",
+            "02943e905a1db15085cf",
+            "51750410dc3d7fc1bf57",
+            "0818dfd2006cebae4b88",
+            "5badbf8bce30a2031b8d",
+            "c64ee0e107320486a986",
+            "9709fdc185f553d951a9"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 18,
+          "startDate": "2026-09-27",
+          "endDate": "2026-10-03",
+          "targets": [],
+          "summary": "Revision & practice week",
+          "days": [
+            "35b113a97677a44c3e7f",
+            "a69574a3ef3ff9121e58",
+            "a93cc677fe7f531524c5",
+            "09dc6532086268307ff8",
+            "00e73a50264fb67a02a2",
+            "b70029f93bffc3dad0f2",
+            "07e3f3f1990bff9d0d81"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 19,
+          "startDate": "2026-10-04",
+          "endDate": "2026-10-10",
+          "targets": [],
+          "summary": "Revision & practice week",
+          "days": [
+            "72f9f0b2e40f1976eb30",
+            "394b99655c2c4af981f9",
+            "9dbd5885588503b05aa5",
+            "cd581ac4a6c1191690e3",
+            "bb27eb8db8c2ff060a11",
+            "a4e28ee37214a09f88e9",
+            "04415a6545b6e0dda396"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 20,
+          "startDate": "2026-10-11",
+          "endDate": "2026-10-17",
+          "targets": [],
+          "summary": "Revision & practice week",
+          "days": [
+            "366047594122e4466db8",
+            "18e046d4980172fd8a84",
+            "e6b4a015086826a992a0",
+            "45c60bab308ae46ef57d",
+            "a2238a94d9e312c411ec",
+            "ef8cc4a36396faea2bd5",
+            "749999c7ac66d5304dd4"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 21,
+          "startDate": "2026-10-18",
+          "endDate": "2026-10-24",
+          "targets": [],
+          "summary": "Revision & practice week",
+          "days": [
+            "2c9525cf9292795ed086",
+            "e034d9fdb11d959872a1",
+            "f645accfe26ea264ac75",
+            "0da39991bfe4264a99b3",
+            "fe950c9f1d87f5bbb18f",
+            "2f8c54b7526bc45317a3",
+            "450859c69890548ca6c6"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 22,
+          "startDate": "2026-10-25",
+          "endDate": "2026-10-31",
+          "targets": [],
+          "summary": "Revision & practice week",
+          "days": [
+            "ab80a55536c951df848c",
+            "2b0664a8dfa09f6a0b16",
+            "ccc705421610ec345f84",
+            "cb080a863511fff96163",
+            "39260c6e6791614abbdc",
+            "6963d994cd3dd9912953",
+            "46ca60be5d9608389c36"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 23,
+          "startDate": "2026-11-01",
+          "endDate": "2026-11-07",
+          "targets": [],
+          "summary": "Revision & practice week",
+          "days": [
+            "98f8cef1cb3e571a0a3c",
+            "2c96c4ae24507082d6f3",
+            "e473773e250e8fcff57e",
+            "11c15fbdcaef032fedb7",
+            "5042c6349ea2bccb01a6",
+            "518d2d8d550a31311826",
+            "5641edef0cfbd0c1d6ca"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 24,
+          "startDate": "2026-11-08",
+          "endDate": "2026-11-14",
+          "targets": [
+            "Mixed subject revision + PYQs",
+            "Weak topics revision + short notes"
+          ],
+          "summary": "Cover: Mixed subject revision + PYQs, Weak topics revision + short notes",
+          "days": [
+            "28f7c4329796deced04a",
+            "6445f090b6ab9fd0934a",
+            "45fc706458cd83b1ade7",
+            "566ee6de5a0c2687b3d5",
+            "c39c5e0309ef61f82c9e",
+            "789ca28c4280c673118a",
+            "18383bbfb4c63aaa0bf2"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 25,
+          "startDate": "2026-11-15",
+          "endDate": "2026-11-21",
+          "targets": [
+            "Mixed subject revision + PYQs",
+            "Weak topics revision + short notes"
+          ],
+          "summary": "Cover: Mixed subject revision + PYQs, Weak topics revision + short notes",
+          "days": [
+            "3eb091a1a06b5ece7f72",
+            "e807ccf78e362e7891d7",
+            "5dcabf57ed7bf6bdff0d",
+            "c542631c590f3fc494cd",
+            "1bc6bddca3baecde9e1d",
+            "785717de2181f46c44d8",
+            "9f209b174a7fdf9c2519"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 26,
+          "startDate": "2026-11-22",
+          "endDate": "2026-11-28",
+          "targets": [
+            "Weak topics revision + short notes",
+            "Mixed subject revision + PYQs"
+          ],
+          "summary": "Cover: Weak topics revision + short notes, Mixed subject revision + PYQs",
+          "days": [
+            "b05b8190a400b92ce341",
+            "2c0a1746c419d0a31d3d",
+            "5c4aafe05d170efbbb23",
+            "364122c86a34457c5daf",
+            "93495c0e0d226d7862da",
+            "38b0d919e5916c1674fc",
+            "508b14fa002f6841b86a"
+          ],
+          "completedDays": 0,
+          "totalDays": 7
+        },
+        {
+          "weekNumber": 27,
+          "startDate": "2026-11-29",
+          "endDate": "2026-11-29",
+          "targets": [
+            "Full mock test + error log review"
+          ],
+          "summary": "Cover: Full mock test + error log review",
+          "days": [
+            "d8f659252ea027497df0"
+          ],
+          "completedDays": 0,
+          "totalDays": 1
+        }
+      ],
+      "syllabus": [
+        {
+          "id": "maths",
+          "name": "Mathematics",
+          "topicCount": 6
+        },
+        {
+          "id": "gmat",
+          "name": "GAT — General Ability",
+          "topicCount": 4
+        }
+      ],
+      "aiTips": null,
+      "adjustmentCount": 0,
+      "lastAdjustedAt": null,
+      "createdAt": "2026-06-01T07:36:28.836Z",
+      "updatedAt": "2026-06-01T07:36:28.836Z",
+      "stats": {
+        "progressPercent": 0,
+        "completedTasks": 0,
+        "totalTasks": 45,
+        "overdueCount": 0,
+        "daysRemaining": 182
+      }
+    }
+  ]
+}

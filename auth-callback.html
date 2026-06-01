@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+(function(){var b="",h=location.hostname;if(/\.github\.io$/i.test(h)){var s=location.pathname.split("/").filter(Boolean)[0];if(s&&!/\.html$/i.test(s))b="/"+s+"/";}window.SHARDA_BASE=b;if(b){var e=document.createElement("base");e.href=b;document.head.appendChild(e);}})();
+  </script>
+  <title>Signing in… — Sharda Setu</title>
+  <link rel="stylesheet" href="login.css">
+
+  <meta name="theme-color" content="#1a237e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Sharda Setu" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.svg" />
+  <link rel="stylesheet" href="pwa.css" />
+</head>
+<body>
+  <div class="container" style="text-align:center;padding:80px 20px">
+    <h1>Signing you in…</h1>
+    <p id="status">Please wait.</p>
+  </div>
+  <script src="auth.js"></script>
+  <script>
+    (async () => {
+      const status = document.getElementById("status");
+      try {
+        await ShardaAuth.handleOAuthCallback();
+        const next = new URLSearchParams(location.search).get("next");
+        window.location.href = next && !next.includes("://") ? next : "profile.html";
+      } catch (ex) {
+        status.textContent = ex.message || "Sign in failed.";
+        setTimeout(() => { window.location.href = "login.html"; }, 2500);
+      }
+    })();
+  </script>
+  <script src="pwa.js" defer></script>
+</body>
+</html>
